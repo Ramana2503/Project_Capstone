@@ -1,0 +1,72 @@
+{
+  "application": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 10000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 1.5,
+    "credit_score": 400,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "loan_amount": 10000000.0,
+    "tenure_months": 12,
+    "timestamp": "2026-07-04T23:02:41.686263"
+  },
+  "applicant_profile": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 10000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 1.5,
+    "credit_score": 400,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 10,
+  "credit_history": {
+    "late_payments": 0,
+    "default_accounts": 0,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "LOW",
+    "red_flags": {
+      "late_payments": false,
+      "default_accounts": false
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 103283.46,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [
+    "Critically low credit score"
+  ],
+  "anomaly_risk_score": 25,
+  "employment_risk_factor": 0.6,
+  "decision": "REQUIRES_REVIEW",
+  "final_risk_score": 54.5,
+  "confidence_level": 0.7,
+  "key_decision_factors": [
+    "Very poor credit score (<600)",
+    "High debt-to-income ratio"
+  ],
+  "decision_explanation": "Application requires manual review due to mixed risk signals. Risk score: 54.5/100. Key factors: Very poor credit score (400 - critical tier); Extremely high debt-to-income ratio (103,283%); Unemployed status with minimal employment history; Suspicious loan amount mismatch ($10M request with $833/month income); Zero late payments and defaults (positive indicator); High anomaly risk score indicating unusual application patterns.",
+  "case_id": "CASE_APR001_20260704230317",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APR001_20260704230317, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment - APR001 (Maxwell JR)\n\n### Summary\n**RECOMMENDATION: HIGH RISK - NOT APPROVED**\n\n---\n\n### Key Findings:\n\n**1. Income & Employment - \u26a0\ufe0f CRITICAL CONCERN**\n- **Annual Income:** $10,000 (extremely low)\n- **Employment Status:** Unemployed\n- **Income Stability Score:** 10/100 (Very Poor)\n- The applicant has no current employment despite 1.5 years tracking period\n\n**2. Credit Profile - \ud83d\udd34 POOR**\n- **Credit Score:** 400 (Very Poor - well below 500 minimum standards)\n- **Credit History:** \n  - No active accounts in good standing\n  - No late payments or defaults (positive)\n  - No credit activity/minimal credit presence\n\n**3. Debt-to-Income Analysis - \u26a0\ufe0f CONCERNING**\n- **Existing Liabilities:** $1,000\n- **Debt-to-Income Ratio:** 10% (liabilities-to-income ratio)\n- With $10,000 annual income (~$833/month), repayment capacity is severely limited\n\n**4. Creditworthiness Assessment - \ud83d\udfe2 NEUTRAL**\n- **Risk Assessment:** Low (based on payment history)\n- No red flags for defaults or late payments\n- However, lack of credit history is concerning\n\n---\n\n### Risk Factors:\n1. \u274c Unemployed status with no stable income source\n2. \u274c Extremely low credit score (400)\n3. \u274c Minimal annual income ($10,000)\n4. \u274c Very low income stability score (10/100)\n5. \u26a0\ufe0f Limited credit history/no active accounts\n\n### Recommendation:\n**DECLINE** - This applicant does not meet lending standards due to unemployment status and inadequate income to service additional debt obligations.",
+    "[Risk Agent] ## Financial Risk Analysis Summary - Loan Application Assessment\n\n### \u26d4 CRITICAL RISK VERDICT: **EXTREME RISK - IMMEDIATE DECLINE**\n\n---\n\n### 1. Debt-to-Income (DTI) Analysis - \ud83d\udd34 CATASTROPHIC\n\n| Metric | Value | Assessment |\n|--------|-------|------------|\n| **DTI Ratio** | **103,283%** | \u26a0\ufe0f **IMPOSSIBLE** |\n| **Monthly Income** | $833.33 | - |\n| **Monthly Loan Payment** | $860,664.30 | 1,034x monthly income |\n| **Total Monthly Liabilities** | $860,692.07 | 1,034x monthly income |\n| **Debt Repayment Capacity** | **NEGATIVE** | Cannot repay any amount |\n\n**Analysis:** The applicant's monthly income of $833.33 is utterly insufficient to cover a $860,664.30 monthly loan payment. The DTI ratio of **103,283%** is astronomically beyond acceptable lending standards (typical max: 43%).\n\n---\n\n### 2. Employment Risk Assessment - \ud83d\udd34 SEVERE\n\n| Factor | Value | Risk Level |\n|--------|-------|-----------|\n| **Employment Status** | Unemployed | Critical |\n| **Employment History** | 1.5 years | Poor |\n| **Employment Risk Factor** | 0.6 (High Risk) | **SEVERE** |\n| **Income Stability** | No active employment | No stability |\n\n**Analysis:** Unemployment status combined with minimal employment history creates extreme income instability. No current income source to support any debt obligations.\n\n---\n\n### 3. Credit & Anomaly Detection - \ud83d\udd34 HIGH RISK\n\n| Factor | Finding | Severity |\n|--------|---------|----------|\n| **Credit Score** | 400 (Critical) | \ud83d\udd34 Severe |\n| **Anomaly Risk Score** | 25/100 | MEDIUM-HIGH |\n| **Detected Anomalies** | Critically low credit score | Red Flag |\n| **Late Payments** | 0 | \u2713 Positive |\n| **Defaults** | 0 | \u2713 Positive |\n| **Existing Liabilities vs Loan** | $1K vs $10M | Extreme mismatch |\n\n**Analysis:** Credit score of 400 is substantially below standard lending thresholds. The massive disparity between existing liabilities ($1,000) and requested loan amount ($10,000,000) indicates potential application fraud or extreme misjudgment.\n\n---\n\n### 4. Risk Summary Table\n\n| Risk Category | Score | Status |\n|---------------|-------|--------|\n| **Debt-to-Income** | 103,283% | \ud83d\udd34 CRITICAL |\n| **Employment Risk** | 0.60 | \ud83d\udd34 SEVERE |\n| **Credit Risk** | 400 (Poor) | \ud83d\udd34 SEVERE |\n| **Anomaly Detection** | 25 | \ud83d\udfe1 MEDIUM |\n| **Overall Risk Level** | **EXTREME** | \ud83d\udd34 **REJECT** |\n\n---\n\n### Key Risk Factors:\n\n1. **\u26d4 Impossible Debt Service:**\n   - Monthly payment ($860,664) exceeds monthly income ($833) by **1,034 times**\n   - 100% default probability within first month\n\n2. **\u26d4 Unemployment Crisis:**\n   - No current employment income\n   - Minimal employment history (1.5 years)\n   - High employment risk factor (0.60)\n\n3. **\u26d4 Poor Creditworthiness:**\n   - Credit score of 400 (Critical tier)\n   - Below minimum lending standards\n\n4. **\u26d4 Suspicious Application Patterns:**\n   - $10M loan request with $833/month income\n   - Massive scale mismatch ($1K existing liability vs $10M request)\n   - Potential fraud indicator\n\n---\n\n### Final Recommendation:\n\n### \ud83d\udd34 **IMMEDIATE REJECTION**\n\n**Rationale:**\n- Applicant is **financially incapable** of repaying any portion of the requested loan\n- Monthly debt obligation exceeds annual income by **1,",
+    "[Decision Agent] ---\n\n## \ud83d\udd34 FINAL LOAN DECISION - MAXWELL JR (APR001)\n\n### **DECISION: REQUIRES_REVIEW** (with strong recommendation to REJECT)\n\n**Confidence Level:** 70%  \n**Final Risk Score:** 54.5/100\n\n---\n\n### Risk Score Breakdown:\n\n| Component | Score | Weight | Assessment |\n|-----------|-------|--------|------------|\n| **Credit Risk** | 80 | Critical | Poor credit score (400) |\n| **DTI Risk** | 70 | Critical | Impossible debt service (103,283%) |\n| **Employment Risk** | 30 | High | Unemployed status (0.6 factor) |\n| **Anomaly Risk** | 25 | Medium | Suspicious application patterns |\n| **Liability Risk** | 10 | Low | Minimal existing debt |\n| **COMPOSITE RISK** | **54.5** | - | **HIGH RISK** |\n\n---\n\n### Decision Rationale:\n\n#### \ud83d\udd34 **Critical Disqualifying Factors:**\n\n1. **Impossibly High Debt-to-Income Ratio (103,283%)**\n   - Monthly payment requirement: $860,664\n   - Monthly income available: $833\n   - **Shortfall: 1,034 times monthly income**\n   - \u274c **Zero repayment capacity**\n\n2. **Very Poor Credit Score (400)**\n   - Below all standard lending thresholds\n   - Critical tier creditworthiness\n   - \u274c **High default probability**\n\n3. **Unemployment Status**\n   - Currently unemployed with no income source\n   - Minimal employment history (1.5 years)\n   - Employment risk factor: 0.6 (High)\n   - \u274c **Income stability: None**\n\n4. **Suspicious Application Anomalies**\n   - Loan request ($10M) vastly exceeds applicant profile\n   - Extreme mismatch between existing liabilities ($1K) and request\n   - Anomaly risk score: 25 (Red flag)\n   - \u274c **Potential fraud indicators**\n\n#### \ud83d\udfe2 **Positive Factors (Mitigating):**\n\n- Zero late payments on record\n- Zero default accounts\n- Clean payment history (only positive item)\n\n---\n\n### Detailed Explanation:\n\n**Brief:** Application requires manual review due to mixed risk signals.\n\n**Full Assessment:**\nApplication requires manual review due to mixed risk signals. Risk score: 54.5/100. This applicant presents an extraordinary disconnect between income capacity and loan request amount. While the payment history is clean (no late payments or defaults), the fundamental financial metrics are incompatible with prudent lending:\n\n- The applicant's monthly income ($833) cannot support a monthly obligation of $860,664\n- Credit score of 400 indicates serious creditworthiness concerns\n- Unemployed status eliminates current income verification\n- The massive loan-to-income ratio (10M:$10K annual) suggests either fraud or extreme misjudgment\n\n---\n\n### \u26d4 **BINDING RECOMMENDATION: REJECT**\n\n**Justification for Override of REQUIRES_REVIEW Status:**\n\nWhile the system flagged this as REQUIRES_REVIEW, the mathematical and financial impossibilities present warrant a stronger recommendation:\n\n1. **Mathematically Impossible Repayment**: No scenario exists where $833/month income services $860,664/month obligation\n2. **Immediate Default Risk**: Application presents 100% probability of default within first month\n3. **Potential Fraud**: The extreme mismatch warrants fraud investigation rather than standard review\n4. **Regulatory Compliance**: Approving creates significant legal/compliance liability\n\n---\n\n### **FINAL VERDICT:**\n\n### \ud83d\udd34 **REJECT - DO NOT APPROVE**\n\n**Recommended Action:**\n- \u274c **Deny the $10,000,000 loan request**\n- \u26a0\ufe0f **Flag application for fraud investigation** (optional)\n- \ud83d\udccb **Consider if applicant should reapply with:**\n  - Realistic loan amount matching income\n  - Active employment verification\n  - Credit improvement timeline\n\n---\n\n**Decision Made By:** Loan Decision Agent  \n**Risk Assessment Level:** Extreme/Critical  \n**Confidence in Recommendation:** ",
+    "[Compliance Agent] ---\n\n## \u2705 **COMPLIANCE & ACTION ORCHESTRATION WORKFLOW - COMPLETE**\n\n### **Overall Status: ALL COMPLIANCE ACTIONS SUCCESSFULLY COMPLETED**\n\n---\n\n### 1. **CASE RECORD CREATION** \u2705 COMPLETED\n\n| Item | Value |\n|------|-------|\n| **Case ID** | CASE_APR001_20260704230317 |\n| **Status** | CREATED |\n| **Applicant ID** | APR001 |\n| **Decision** | REQUIRES_REVIEW |\n| **Risk Score** | 54.5/100 |\n| **Confidence Level** | 70% |\n| **Creation Timestamp** | 2026-07-04T23:03:17.929430 |\n\n**Key Factors Recorded:**\n- Very poor credit score (400 - critical tier)\n- Extremely high debt-to-income ratio (103,283%)\n- Unemployed status with minimal employment history\n- Suspicious loan amount mismatch ($10M request with $833/month income)\n- Zero late payments and defaults (positive indicator)\n\n---\n\n### 2. **APPLICANT DECISION NOTIFICATION** \u2705 COMPLETED\n\n| Item | Value |\n|------|-------|\n| **Notification ID** | NOTIF_APR001_20260704230321 |\n| **Status** | SENT |\n| **Recipient** | APR001 (Maxwell JR) |\n| **Decision Status** | REQUIRES_REVIEW |\n| **Timestamp** | 2026-07-04T23:03:21 |\n\n**Notification Summary Sent to Applicant:**\n- \u2705 Current decision status explained (REQUIRES_REVIEW)\n- \u2705 Risk score disclosed (54.5/100, 70% confidence)\n- \u2705 Key factors explained in applicant-friendly language\n- \u2705 Positive indicators highlighted (zero late payments, zero defaults)\n- \u2705 Next steps communicated (manual underwriting review within 5-7 business days)\n- \u2705 Documentation requirements outlined\n\n---\n\n### 3. **COMPLIANCE AUDIT LOG ENTRY** \u2705 COMPLETED\n\n| Item | Value |\n|------|-------|\n| **Log ID** | LOG_CASE_APR001_20260704230317_230324 |\n| **Status** | LOGGED |\n| **Case Reference** | CASE_APR001_20260704230317 |\n| **Timestamp** | 2026-07-04T23:03:24.420151 |\n\n**Audit Trail Documentation:**\n- \u2705 Automated decision process documented\n- \u2705 Risk assessment factors recorded (Score: 54.5/100)\n- \u2705 Critical factors logged:\n  - Credit Score: 400 (critical tier)\n  - DTI Ratio: 103,283% (extreme)\n  - Employment: Unemployed\n  - Anomaly Risk: 25\n- \u2705 Mitigating factors documented (zero late payments, zero defaults)\n- \u2705 Underwriting team assignment recorded\n- \u2705 Review timeline established (5-7 business days)\n- \u2705 Fraud investigation recommendation logged\n\n---\n\n### **WORKFLOW COMPLETION SUMMARY**\n\n```\nWORKFLOW STATUS: \u2705 COMPLETE\n\u251c\u2500\u2500 Case Record Creation.............. \u2705 PASSED\n\u251c\u2500\u2500 Applicant Notification............ \u2705 PASSED\n\u251c\u2500\u2500 Compliance Audit Logging.......... \u2705 PASSED\n\u2514\u2500\u2500 Overall Compliance Status......... \u2705 PASSED\n```\n\n---\n\n### **Compliance Verification Checklist:**\n\n| Requirement | Status | Notes |\n|------------|--------|-------|\n| Formal case record created | \u2705 | Case ID: CASE_APR001_20260704230317 |\n| Case properly indexed | \u2705 | By Applicant ID & Timestamp |\n| Decision documented | \u2705 | REQUIRES_REVIEW with full rationale |\n| Risk assessment recorded | \u2705 | Risk Score: 54.5/100, Confidence: 70% |\n| Applicant notified | \u2705 | Notification ID: NOTIF_AP"
+  ]
+}

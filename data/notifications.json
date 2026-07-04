@@ -1,0 +1,116 @@
+{
+  "notifications": [
+    {
+      "notification_id": "NOTIF_TEST001_20260703211909",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "explanation": "Application approved based on strong financial profile and low risk indicators. Risk score: 18.5/100. Key factors: Good credit score (700-749); Moderate debt-to-income ratio.",
+      "timestamp": "2026-07-03T21:19:09.427206",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_TEST001_20260703211935",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "explanation": "Application approved based on strong financial profile and low risk indicators. Risk score: 18.5/100. Key factors: Good credit score (700-749); Moderate debt-to-income ratio.",
+      "timestamp": "2026-07-03T21:19:35.175821",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_TEST001_20260703212238",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "explanation": "Application approved based on strong financial profile and low risk indicators. Risk score: 18.5/100. Key factors: Good credit score (700-749); Moderate debt-to-income ratio.",
+      "timestamp": "2026-07-03T21:22:38.759374",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_TEST001_20260703212345",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "explanation": "Your loan application has been APPROVED. Application approved based on strong financial profile and low risk indicators. Risk score: 18.5/100. Key factors: Strong credit score of 720; Zero late payments and no defaults; Clean credit history with no anomalies detected; Stable full-time employment with 5 years tenure; Low liability ratio of 0.12; Acceptable DTI ratio of 36.27%. You will be contacted shortly with next steps regarding loan documentation and disbursement.",
+      "timestamp": "2026-07-03T21:23:45.141896",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_AAP001_20260703212642",
+      "applicant_id": "AAP001",
+      "decision": "APPROVED",
+      "explanation": "Your loan application has been APPROVED. Decision based on strong financial profile and low risk indicators. Risk Assessment: 18.2/100 (Low Risk). Key factors: Clean credit history with no late payments or defaults; Fair credit score of 700; Low anomaly risk score; Stable full-time employment; Manageable debt-to-income ratio of 44.22%. Next steps: Please submit required documentation for loan origination including recent pay stubs and tax returns. Your loan will proceed to final underwriting within 3-5 business days. Congratulations on your approval!",
+      "timestamp": "2026-07-03T21:26:42.591121",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704225212",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "explanation": "Your loan application has been approved. Application approved based on strong financial profile and low risk indicators. Risk score: 18.2/100. Key factors: Clean credit history with no late payments or defaults; Fair credit score within acceptable range (700); Low employment risk factor (0.05) with stable full-time employment; Zero anomalies detected - consistent financial profile; Manageable liability ratio (0.10); DTI ratio at acceptable level (44.22%). You may proceed to the loan disbursement phase. Please contact our loan officer for next steps.",
+      "timestamp": "2026-07-04T22:52:12.217674",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704225555",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "explanation": "Congratulations! Your loan application has been APPROVED. Your application was approved based on a strong financial profile and low risk indicators. Key approval factors include: Your excellent payment history with 0 late payments and 0 defaults, Fair credit score of 700 demonstrating responsible credit management, Stable full-time employment status, Clean financial profile with no anomalies detected, and a manageable debt-to-income ratio. Your risk assessment score is 18.2/100 (Low Risk) with 90% confidence level. Next steps: We will contact you shortly with loan documentation and finalization details. Please have your employment verification and recent financial statements ready for submission. Thank you for choosing our lending service.",
+      "timestamp": "2026-07-04T22:55:55.795798",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704225556",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "explanation": "Your loan application has been APPROVED. We are pleased to inform you that based on your strong financial profile, clean payment history, stable employment, and fair credit score, your loan application has been approved. Risk assessment score: 18.2/100 (low risk). Key approval factors: Good credit score (700-749), Moderate debt-to-income ratio, Clean payment history with zero late payments and defaults, Stable full-time employment. Next steps: You will be contacted by our loan officer within 2 business days to discuss loan terms, documentation requirements, and funding timeline. Please have your recent pay stubs and employment verification documents ready. Congratulations on your approval!",
+      "timestamp": "2026-07-04T22:55:56.112075",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704225725",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "explanation": "Congratulations! Your loan application (APR001) has been APPROVED. Your application was approved based on a strong financial profile and acceptable risk indicators. Risk Score: 28.8/100 (Acceptable). Key Strengths: Clean payment history with zero late payments and zero defaults; No detected anomalies or inconsistencies in your application; Stable full-time employment; Manageable liability ratio. Risk Considerations: Fair credit score (600) requires monitoring; Debt-to-income ratio at 44.22% (upper acceptable threshold). IMPORTANT NEXT STEPS: (1) Loan Offer: You will receive a formal loan offer within 2 business days with terms including interest rate premium due to your credit profile; (2) Documentation: Please prepare employment verification (recent pay stubs, W-2s) and 6 months of bank statements; (3) Approval Conditions: Quarterly income verification will be required during the first 24 months; (4) Contact: A loan officer will reach out to discuss loan structure options and finalize terms. Please contact us if you have any questions. Thank you for choosing our lending services.\"",
+      "timestamp": "2026-07-04T22:57:25.703722",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704225907",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APR001) has been placed under manual underwriter review due to mixed risk signals. Risk Score: 37.5/100. Your credit payment history is clean with no late payments or defaults; however, your debt-to-income ratio of 392.21% indicates the current loan amount may be unaffordable. We recommend: (1) Restructuring to a smaller loan amount for approval, or (2) Reapplying after securing full-time employment and improving your debt-to-income ratio. An underwriter will contact you within 5 business days with next steps. For questions, contact our Loan Services team.",
+      "timestamp": "2026-07-04T22:59:07.457938",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704230020",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APR001) for Maxwell JR requires manual review by our senior underwriting team due to mixed risk signals. Risk Score: 53.0/100 (70% confidence). Key concerns: (1) Credit Score 400 - below prime threshold of 580; (2) Debt-to-Income Ratio 392.21% - critically high (acceptable range: <43%); (3) Monthly loan payment of $19,332.80 exceeds monthly income of $5,000; (4) Part-time employment with 2.0 years tenure indicates income instability. Positive factors: Clean payment history with no defaults or late payments. Your application has been escalated for comprehensive senior underwriter review. You will be contacted within 5 business days with a final determination. Please keep your contact information current.",
+      "timestamp": "2026-07-04T23:00:20.988624",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704230148",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APR001) for $1,000,000 is currently under review by our lending committee. Risk Score: 54.5/100. Key factors affecting your application: (1) Credit score of 400 is below our minimum threshold of 620, (2) Debt-to-income ratio of 2323.28% indicates monthly liabilities significantly exceed monthly income, (3) Current unemployed status limits income stability. Positive factors: You have demonstrated responsible payment behavior with zero late payments and no defaults. A decision will be communicated within 5-7 business days. If you have questions, please contact our applicant support team.",
+      "timestamp": "2026-07-04T23:01:48.305150",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704230156",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Dear Maxwell JR, Thank you for submitting your loan application (APR001). After comprehensive financial analysis, your application requires manual review by our lending committee. ANALYSIS SUMMARY: Your application presents mixed risk signals requiring specialist evaluation. Risk Score: 54.5/100. KEY FINDINGS: 1. Credit Profile: Your credit score of 400 is below our standard threshold of 600, indicating past financial challenges. However, your recent payment history shows 0 late payments and 0 defaults, which is positive. 2. Debt-to-Income Ratio: At 2,323.28%, your projected monthly obligations significantly exceed your monthly income, raising concerns about repayment capacity. 3. Employment Status: Your current unemployed status with 1.5 years tenure requires further documentation and verification of income sources. 4. Existing Liabilities: Your low existing debt burden ($1,000) is a positive factor. NEXT STEPS: Your application has been escalated to our Loan Review Committee for manual assessment. We will contact you within 5-7 business days with a final determination. Please prepare documentation supporting: - Source and stability of your $10,000 annual income - Employment history and prospects - Any extenuating circumstances affecting your credit profile CONTACT: For questions, please contact our Customer Service at [support contact]. Case ID: CASE_APR001_20260704230151 We appreciate your application and will provide a comprehensive review. Sincerely, Loan Processing Team\"",
+      "timestamp": "2026-07-04T23:01:56.015442",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704230321",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application for APR001 has been placed under REQUIRES_REVIEW status. Risk Score: 54.5/100 with 70% confidence level. Your application presents mixed risk signals requiring manual review by our underwriting team. Key factors under review: (1) Very poor credit score of 400 (critical tier); (2) Extremely high debt-to-income ratio of 103,283%; (3) Current unemployed status with minimal employment history; (4) Significant mismatch between loan request amount and verified income. However, your account shows positive indicators including zero late payments and zero default accounts. Our underwriting team will conduct a comprehensive manual review and contact you within 5-7 business days with a final determination. Please be prepared to provide additional documentation regarding income sources and employment verification.\"",
+      "timestamp": "2026-07-04T23:03:21.121737",
+      "status": "SENT"
+    }
+  ]
+}

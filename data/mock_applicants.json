@@ -1,0 +1,99 @@
+{
+  "applicants": {
+    "APP001": {
+      "applicant_id": "APP001",
+      "name": "John Smith",
+      "age": 35,
+      "income": 75000,
+      "employment_type": "Full-time",
+      "employment_years": 5,
+      "credit_score": 750,
+      "existing_liabilities": 15000,
+      "location": "New York",
+      "phone": "555-0101",
+      "email": "john.smith@email.com",
+      "credit_history": {
+        "accounts": 4,
+        "accounts_in_good_standing": 4,
+        "late_payments": 0,
+        "default_accounts": 0
+      }
+    },
+    "APP002": {
+      "applicant_id": "APP002",
+      "name": "Sarah Johnson",
+      "age": 28,
+      "income": 45000,
+      "employment_type": "Contract",
+      "employment_years": 1,
+      "credit_score": 620,
+      "existing_liabilities": 8000,
+      "location": "Los Angeles",
+      "phone": "555-0102",
+      "email": "sarah.johnson@email.com",
+      "credit_history": {
+        "accounts": 3,
+        "accounts_in_good_standing": 2,
+        "late_payments": 2,
+        "default_accounts": 0
+      }
+    },
+    "APP003": {
+      "applicant_id": "APP003",
+      "name": "Mike Davis",
+      "age": 52,
+      "income": 120000,
+      "employment_type": "Self-employed",
+      "employment_years": 8,
+      "credit_score": 800,
+      "existing_liabilities": 50000,
+      "location": "Chicago",
+      "phone": "555-0103",
+      "email": "mike.davis@email.com",
+      "credit_history": {
+        "accounts": 6,
+        "accounts_in_good_standing": 6,
+        "late_payments": 0,
+        "default_accounts": 0
+      }
+    },
+    "APP004": {
+      "applicant_id": "APP004",
+      "name": "Emma Wilson",
+      "age": 42,
+      "income": 85000,
+      "employment_type": "Full-time",
+      "employment_years": 10,
+      "credit_score": 580,
+      "existing_liabilities": 40000,
+      "location": "Miami",
+      "phone": "555-0104",
+      "email": "emma.wilson@email.com",
+      "credit_history": {
+        "accounts": 5,
+        "accounts_in_good_standing": 3,
+        "late_payments": 5,
+        "default_accounts": 1
+      }
+    },
+    "APP005": {
+      "applicant_id": "APP005",
+      "name": "Robert Brown",
+      "age": 31,
+      "income": 65000,
+      "employment_type": "Full-time",
+      "employment_years": 3,
+      "credit_score": 700,
+      "existing_liabilities": 12000,
+      "location": "Boston",
+      "phone": "555-0105",
+      "email": "robert.brown@email.com",
+      "credit_history": {
+        "accounts": 4,
+        "accounts_in_good_standing": 4,
+        "late_payments": 0,
+        "default_accounts": 0
+      }
+    }
+  }
+}

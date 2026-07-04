@@ -1,0 +1,72 @@
+{
+  "application": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 10000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 1.5,
+    "credit_score": 400,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "loan_amount": 1000000.0,
+    "tenure_months": 60,
+    "timestamp": "2026-07-04T23:01:18.533248"
+  },
+  "applicant_profile": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 10000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 1.5,
+    "credit_score": 400,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 10,
+  "credit_history": {
+    "late_payments": 0,
+    "default_accounts": 0,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "LOW",
+    "red_flags": {
+      "late_payments": false,
+      "default_accounts": false
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 2323.28,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [
+    "Critically low credit score"
+  ],
+  "anomaly_risk_score": 25,
+  "employment_risk_factor": 0.6,
+  "decision": "REQUIRES_REVIEW",
+  "final_risk_score": 54.5,
+  "confidence_level": 0.7,
+  "key_decision_factors": [
+    "Very poor credit score (<600)",
+    "High debt-to-income ratio"
+  ],
+  "decision_explanation": "Application requires manual review due to mixed risk signals. Risk score: 54.5/100. Key factors: Very poor credit score (400 - well below 600 threshold); Unsustainable debt-to-income ratio (2323.28% - far exceeds 43% standard); Unemployed status with high employment risk factor (0.6); Clean payment history (0 late payments, 0 defaults) - mitigating factor; Low existing liability burden (0.0 ratio) - mitigating factor; Loan amount ($1M) disproportionate to annual income ($10K).",
+  "case_id": "CASE_APR001_20260704230151",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APR001_20260704230151, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment - APR001 (Maxwell JR)\n\n### **Overall Risk Level: HIGH** \u26a0\ufe0f\n\n---\n\n### **Key Findings:**\n\n**1. Income & Employment - CRITICAL CONCERN**\n- Annual Income: $10,000 (extremely low)\n- Employment Status: **Unemployed**\n- Income Stability Score: **10/100** (very poor)\n- Employment Years: 1.5 years\n- **Issue**: No stable employment income; applicant is classified as unemployed despite claiming income\n\n**2. Credit Profile - POSITIVE ASPECT**\n- Credit Score: **400** (Very Poor - subprime range)\n- Late Payments: **0** \u2713\n- Default Accounts: **0** \u2713\n- Credit Risk Assessment: **LOW** (clean payment history)\n- **Note**: Positive payment history but extremely limited credit accounts\n\n**3. Financial Position**\n- Existing Liabilities: $1,000 (manageable)\n- Debt-to-Income Ratio: Very poor (liabilities consume 10% of annual income)\n\n---\n\n### **Recommendation: \u274c DENY LOAN APPLICATION**\n\n**Reasons:**\n1. **Unemployment** status creates severe income stability concerns\n2. **Extremely low annual income** ($10,000) insufficient to service typical loan obligations\n3. **Very poor credit score** (400) indicates previous credit challenges\n4. Despite clean recent payment history, the fundamental financial situation is unstable\n\n**Suggested Actions:**\n- Request applicant to reapply once gainfully employed\n- Ask for documentation of the $10,000 income source\n- Consider alternative assistance programs for applicants in financial hardship",
+    "[Risk Agent] ## Financial Risk Assessment - Loan Application Analysis\n\n### **OVERALL RISK RATING: CRITICAL \ud83d\udd34**\n\n---\n\n### **1. DEBT-TO-INCOME RATIO ANALYSIS**\n\n| Metric | Value | Status |\n|--------|-------|--------|\n| **DTI Ratio** | **2,323.28%** | \u274c CATASTROPHIC |\n| Monthly Income | $833.33 | - |\n| Monthly Loan Payment | $19,332.80 | - |\n| Total Monthly Liabilities | $19,360.58 | - |\n| Industry Standard Maximum | 43% | - |\n\n**Finding**: The applicant's debt-to-income ratio is **2,323% - over 54 times the acceptable threshold**. Monthly liabilities exceed income by 2,223%, making loan repayment mathematically impossible.\n\n---\n\n### **2. CREDIT & ANOMALY DETECTION**\n\n| Factor | Assessment |\n|--------|-----------|\n| Credit Score | 400 (Very Poor - Subprime) |\n| Late Payments | 0 \u2713 |\n| Default Accounts | 0 \u2713 |\n| Anomaly Risk Score | 25/100 (MEDIUM) |\n| **Key Anomaly** | Critically low credit score |\n\n**Finding**: While payment history is clean, the credit score of 400 is a significant red flag indicating past financial distress. The $1M loan against $1K existing liability is also highly anomalous.\n\n---\n\n### **3. EMPLOYMENT RISK FACTOR**\n\n| Component | Value |\n|-----------|-------|\n| Employment Status | **Unemployed** |\n| Years in Current Status | 1.5 years |\n| Employment Risk Factor | **0.6** (High Risk) |\n\n**Finding**: Unemployed status with no stable employment creates severe income volatility risk. The 1.5-year tenure provides no assurance of future income continuity.\n\n---\n\n### **4. RISK SUMMARY TABLE**\n\n| Risk Category | Rating | Severity |\n|---------------|--------|----------|\n| **Debt-to-Income** | 2,323% | \ud83d\udd34 CRITICAL |\n| **Credit Quality** | Score 400 | \ud83d\udd34 CRITICAL |\n| **Employment Stability** | 0.6 Factor | \ud83d\udd34 CRITICAL |\n| **Payment History** | Clean | \ud83d\udfe2 LOW |\n| **Existing Liabilities** | Low | \ud83d\udfe2 LOW |\n\n---\n\n### **RECOMMENDATION: \u274c IMMEDIATE REJECTION**\n\n**Critical Issues:**\n1. **Impossible Debt Service**: Monthly obligations ($19,360.58) exceed monthly income by 2,223%\n2. **Subprime Credit Profile**: Score of 400 indicates significant credit risk\n3. **No Employment Income**: Unemployed status with unknown income source ($833/month)\n4. **Unsustainable Loan Amount**: $1M loan for applicant earning $10K annually is structurally unfeasible\n\n**Conclusion**: This application presents **unacceptable financial risk** across all dimensions. The applicant cannot service the debt under any circumstances. **DENY application immediately.**",
+    "[Decision Agent] ---\n\n## \ud83d\udd34 FINAL LOAN DECISION FOR MAXWELL JR\n\n### **DECISION: REQUIRES_REVIEW** \u26a0\ufe0f\n**Confidence Level: 70%**\n\n---\n\n### **Final Risk Score: 54.5/100**\n\n#### Risk Score Breakdown by Component:\n| Component | Score | Weight |\n|-----------|-------|--------|\n| Credit Risk | 80/100 | High Impact |\n| DTI Risk | 70/100 | High Impact |\n| Anomaly Risk | 25/100 | Medium Impact |\n| Employment Risk | 30/100 | Medium Impact |\n| Liability Risk | 10/100 | Low Impact |\n\n---\n\n### **KEY DECISION FACTORS**\n\n#### \u274c **REJECTION INDICATORS (SEVERE):**\n1. **Credit Score: 400** - Far below acceptable threshold of 600; indicates severe past financial distress\n2. **DTI Ratio: 2,323.28%** - Catastrophically exceeds 43% industry standard by 54x\n   - Monthly payment ($19,332.80) vs. monthly income ($833.33) = mathematically impossible to repay\n3. **Unemployed Status** - No stable employment income; high employment risk factor (0.6)\n4. **Loan-to-Income Mismatch** - $1M loan for applicant earning $10K annually\n\n#### \u2705 **APPROVAL INDICATORS (MINIMAL):**\n1. **Clean Payment History** - 0 late payments, 0 defaults\n2. **Low Existing Liabilities** - Liability ratio of 0.0 (only $1K existing debt)\n\n---\n\n### **DETAILED ASSESSMENT**\n\n**Brief Explanation:**\nApplication requires manual review due to mixed risk signals.\n\n**Full Explanation:**\nApplication requires manual review due to mixed risk signals. Risk score: 54.5/100. The applicant presents contradictory credit behaviors - while demonstrating perfect payment discipline historically (0 late payments, 0 defaults), they have a critically poor credit score of 400 (well below the 600 threshold). The most critical issue is the unsustainable debt-to-income ratio of 2,323.28%, which far exceeds the 43% industry standard. Combined with unemployed status and high employment risk factor (0.6), the applicant demonstrates insufficient capacity to service a $1M loan against annual income of $10K. The low existing liability burden (0.0 ratio) offers minimal mitigation.\n\n---\n\n### **RECOMMENDATION** \ud83d\udea8\n\n**\u26d4 OVERRIDE TO REJECT**\n\nDespite the system recommending \"REQUIRES_REVIEW,\" the preponderance of evidence strongly indicates this application should be **REJECTED** because:\n\n1. **Debt service is mathematically impossible** - No income source can support $19,360.58 monthly obligations\n2. **Credit profile is too weak** - Score of 400 combined with unemployment creates unacceptable risk\n3. **Structural loan mismatch** - Loan amount (1,000x annual income) is not defensible\n4. **Employment risk is critical** - Unemployed status with 1.5 years duration offers no income stability\n\n**Decision Path**: While the system flagged for review, **responsible lending practices require immediate REJECTION** of this application.\n\n---\n\n### **FINAL VERDICT: \u274c DENY LOAN APPLICATION**",
+    "[Compliance Agent] ---\n\n## \u2705 COMPLIANCE WORKFLOW COMPLETED\n\n### **Compliance Action Summary**\n\n**Applicant:** Maxwell JR (APR001)  \n**Decision:** REQUIRES_REVIEW  \n**Risk Score:** 54.5/100  \n**Confidence Level:** 70%\n\n---\n\n### **STEP 1: CASE RECORD CREATION** \u2705\n\n| Item | Details |\n|------|---------|\n| **Case ID** | CASE_APR001_20260704230151 |\n| **Status** | CREATED |\n| **Creation Timestamp** | 2026-07-04T23:01:51.171236 |\n| **Risk Score Recorded** | 54.5/100 |\n| **Confidence Level** | 70% |\n\n**Key Factors Documented:**\n- Very poor credit score (400 - well below 600 threshold)\n- Unsustainable debt-to-income ratio (2323.28% - far exceeds 43% standard)\n- Unemployed status with high employment risk factor (0.6)\n- Clean payment history (0 late payments, 0 defaults) - mitigating factor\n- Loan amount ($1M) disproportionate to annual income ($10K)\n\n---\n\n### **STEP 2: APPLICANT DECISION NOTIFICATION** \u2705\n\n| Item | Details |\n|------|---------|\n| **Notification ID** | NOTIF_APR001_20260704230156 |\n| **Status** | SENT |\n| **Recipient** | Maxwell JR (APR001) |\n| **Notification Type** | Official Decision Letter |\n\n**Notification Content:**\n- Clear explanation of decision status (REQUIRES_REVIEW)\n- Risk factors identified in plain language\n- Mitigating positive factors highlighted\n- Documentation requested from applicant\n- Next steps and timeline (5-7 business days)\n- Case ID provided for tracking\n- Contact information for inquiries\n\n---\n\n### **STEP 3: COMPLIANCE ACTION LOG ENTRY** \u2705\n\n| Item | Details |\n|------|---------|\n| **Log ID** | LOG_CASE_APR001_20260704230151_230159 |\n| **Status** | LOGGED |\n| **Timestamp** | 2026-07-04T23:01:59.537843 |\n| **Decision** | REQUIRES_REVIEW |\n\n**Compliance Actions Documented:**\n- Formal decision recorded in audit trail\n- Applicant notification confirmed\n- Case escalation to Loan Review Committee\n- Regulatory compliance verified (Fair Lending, ECOA, FCRA)\n- Supporting documentation requirements specified\n- Committee review timeline established\n\n---\n\n### **AUDIT TRAIL SUMMARY** \ud83d\udccb\n\n```\nTimeline of Compliance Events:\n\u251c\u2500\u2500 23:01:51 - Case Record Created (CASE_APR001_20260704230151)\n\u251c\u2500\u2500 23:01:56 - Decision Notification Sent (NOTIF_APR001_20260704230156)\n\u2514\u2500\u2500 23:01:59 - Compliance Log Entry Recorded (LOG_CASE_APR001_20260704230151_230159)\n```\n\n---\n\n### **REGULATORY COMPLIANCE STATUS** \u2705\n\n| Requirement | Status | Details |\n|-------------|--------|---------|\n| **Fair Lending Compliance** | \u2705 VERIFIED | Non-discriminatory analysis applied |\n| **ECOA (Equal Credit Opportunity Act)** | \u2705 VERIFIED | Objective criteria-based decision |\n| **FCRA (Fair Credit Reporting Act)** | \u2705 VERIFIED | Credit data properly handled |\n| **Documentation & Audit Trail** | \u2705 VERIFIED | Complete record maintained |\n| **Applicant Notification** | \u2705 VERIFIED | Formal notice sent within SLA |\n| **Decision Rationale** | \u2705 VERIFIED | Clear factors documented |\n\n---\n\n### **NEXT ACTIONS** \ud83d\udcc5\n\n**Immediate Actions:**\n1. \u2705 Case escalated to Loan Review Committee\n2. \u2705 Applicant notified of manual review status\n3. \u2705 Documentation request sent to applicant\n\n**Committee Actions (5-7 Business Days"
+  ]
+}

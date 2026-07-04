@@ -1,0 +1,12 @@
+anthropic
+fastapi
+uvicorn
+streamlit
+langgraph
+langchain
+langchain-anthropic
+mcp
+pydantic
+python-dotenv
+requests
+httpx

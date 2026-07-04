@@ -1,0 +1,70 @@
+{
+  "application": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Part-time",
+    "employment_years": 2.0,
+    "credit_score": 600,
+    "existing_liabilities": 10000.0,
+    "location": "New Jersey",
+    "loan_amount": 1000000.0,
+    "tenure_months": 60,
+    "timestamp": "2026-07-04T22:58:31.046844"
+  },
+  "applicant_profile": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Part-time",
+    "employment_years": 2.0,
+    "credit_score": 600,
+    "existing_liabilities": 10000.0,
+    "location": "New Jersey",
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 35,
+  "credit_history": {
+    "late_payments": 0,
+    "default_accounts": 0,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "LOW",
+    "red_flags": {
+      "late_payments": false,
+      "default_accounts": false
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 392.21,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [],
+  "anomaly_risk_score": 0,
+  "employment_risk_factor": 0.3,
+  "decision": "REQUIRES_REVIEW",
+  "final_risk_score": 37.5,
+  "confidence_level": 0.7,
+  "key_decision_factors": [
+    "Poor credit score (600-649)",
+    "High debt-to-income ratio"
+  ],
+  "decision_explanation": "Application requires manual review due to mixed risk signals. Risk score: 37.5/100. Key factors: Poor credit score (600-649); Critically high debt-to-income ratio (392.21%); Part-time employment with limited tenure (2.0 years); Clean payment history (0 late payments); No default accounts on record; Low existing liability ratio (0.01); No credit anomalies detected.",
+  "case_id": "CASE_APR001_20260704225907",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APR001_20260704225907, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment - APR001 (Maxwell JR)\n\n### Personal Information\n- **Age:** 30 years old\n- **Location:** New Jersey\n- **Employment Status:** Part-time\n\n### Financial Profile\n| Metric | Value | Assessment |\n|--------|-------|-----------|\n| **Annual Income** | $60,000 | Moderate |\n| **Existing Liabilities** | $10,000 | Manageable |\n| **Debt-to-Income Ratio** | 16.7% | Good |\n| **Credit Score** | 600 | Fair/Poor (Below average) |\n\n### Risk Assessment Summary\n\n**Income Stability Score: 35/100** \u26a0\ufe0f\n- Part-time employment with only 2 years tenure indicates **LOW income stability**\n- Part-time positions are generally considered higher risk due to variable hours and potential for income fluctuation\n\n**Credit History Evaluation: LOW RISK** \u2713\n- **No late payments** - Clean payment history\n- **No defaults** - No delinquent accounts\n- **Credit accounts:** Limited or no established credit history\n- **Red flags:** None detected\n\n**Overall Assessment:**\n\n| Category | Rating | Comment |\n|----------|--------|---------|\n| **Credit Worthiness** | FAIR | Score of 600 is below prime threshold; limited credit history |\n| **Income Stability** | WEAK | Part-time employment is a significant risk factor |\n| **Debt Management** | GOOD | Low existing liabilities relative to income |\n| **Overall Risk Level** | MODERATE-HIGH | While credit history is clean, income instability and fair credit score present lending risk |\n\n### Recommendation\n**Conditional Approval** - Maxwell JR may be considered for approval with:\n- \u2713 Smaller loan amounts\n- \u2713 Higher interest rates\n- \u2713 Requirement for co-signer or collateral\n- \u2713 Shorter loan terms\n- \u26a0\ufe0f Verification of consistent part-time income",
+    "[Risk Agent] ## Financial Risk Analysis Summary\n\n### Loan Application Details\n| Parameter | Value |\n|-----------|-------|\n| **Loan Amount** | $1,000,000 |\n| **Loan Tenure** | 60 months |\n| **Monthly Income** | $5,000.00 |\n| **Existing Liabilities** | $10,000 |\n| **Employment Type** | Part-time |\n| **Years Employed** | 2.0 years |\n| **Credit Score** | 600 |\n\n---\n\n### Risk Assessment Results\n\n#### 1. **Debt-to-Income (DTI) Analysis** \ud83d\udea8 CRITICAL\n| Metric | Value | Assessment |\n|--------|-------|-----------|\n| **DTI Ratio** | 392.21% | **EXTREMELY HIGH - CRITICAL RISK** |\n| **Monthly Loan Payment** | $19,332.80 | **386% of monthly income** |\n| **Total Monthly Liabilities** | $19,610.58 | **392% of monthly income** |\n| **Recommended DTI Maximum** | 43% | **Application exceeds by 849%** |\n\n**Interpretation:** Applicant's monthly debt obligations would exceed their entire monthly income by nearly 4 times. This is financially unsustainable.\n\n#### 2. **Employment Risk Factor** \u26a0\ufe0f HIGH RISK\n| Metric | Value | Assessment |\n|--------|-------|-----------|\n| **Employment Risk Factor** | 0.3 (30%) | **HIGH** |\n| **Employment Type** | Part-time | **Lower stability** |\n| **Tenure** | 2.0 years | **Relatively short** |\n\n**Interpretation:** Part-time employment with limited tenure creates significant income instability risk. Employment could be terminated with limited notice.\n\n#### 3. **Anomaly Detection Analysis** \u2713 NORMAL\n| Finding | Status |\n|---------|--------|\n| **Anomalies Detected** | None |\n| **Anomaly Risk Score** | 0 |\n| **Severity Level** | NONE |\n| **Late Payments** | 0 (Clean) |\n| **Default Accounts** | 0 (Clean) |\n\n**Interpretation:** While credit payment behavior is clean, no anomalies detected in historical patterns.\n\n#### 4. **Credit Profile Assessment** \u26a0\ufe0f FAIR\n| Metric | Value | Assessment |\n|--------|-------|-----------|\n| **Credit Score** | 600 | **Below prime (620+)** |\n| **Payment History** | Clean | **Positive factor** |\n| **Default History** | None | **Positive factor** |\n\n---\n\n### Risk Rating Matrix\n\n| Risk Factor | Rating | Impact |\n|------------|--------|--------|\n| **Debt-to-Income Ratio** | \ud83d\udd34 CRITICAL | Applicant cannot afford loan |\n| **Employment Stability** | \ud83d\udfe0 HIGH | Income vulnerability |\n| **Credit Score** | \ud83d\udfe1 FAIR | Below-average creditworthiness |\n| **Payment History** | \ud83d\udfe2 GOOD | No delinquencies |\n| **Loan-to-Income Ratio** | \ud83d\udd34 CRITICAL | Loan is 200x annual income |\n\n---\n\n### Overall Risk Assessment\n\n## **RECOMMENDATION: REJECT \u274c**\n\n**Overall Risk Level: CRITICAL - DO NOT APPROVE**\n\n### Key Risk Factors:\n1. **Unaffordable Debt Burden:** DTI of 392% is catastrophically high; applicant cannot service this debt\n2. **Income Insufficiency:** $1M loan on $60K annual income is grossly mismatched\n3. **Employment Instability:** Part-time status adds vulnerability to income disruption\n4. **Loan Sizing Issue:** Monthly payment ($19,333) is 3.87x monthly income\n\n### Probability of Default: **VERY HIGH (95%+)**\n\n### Alternative Recommendations:\n- \u2717 **Reduce loan amount** to maximum $50,000-$75,000 (manageable DTI ~15-20%)\n- \u2713 **Secure full-time employment** first, then reapply\n- \u2717 **Obtain co-s",
+    "[Decision Agent] ---\n\n## FINAL LOAN DECISION\n\n### **DECISION: REQUIRES_REVIEW** \u26a0\ufe0f\n\n**Confidence Level:** 70%\n\n---\n\n## Risk Score Analysis\n\n### **Final Composite Risk Score: 37.5/100** (HIGH RISK)\n\n**Component Breakdown:**\n| Component | Score | Weight | Interpretation |\n|-----------|-------|--------|-----------------|\n| **Credit Score** | 50 | Major | Fair credit (600 is subprime) |\n| **Debt-to-Income Ratio** | 70 | Major | **CRITICAL** - Unsustainable debt burden |\n| **Employment Risk** | 15 | Moderate | High risk - Part-time, 2 yrs tenure |\n| **Anomaly Risk** | 0 | Minor | No suspicious patterns detected |\n| **Liability Ratio** | 10 | Minor | Favorable - Low existing debt |\n\n---\n\n## Decision Rationale\n\n### **Positive Factors (Supporting Approval)** \u2713\n- \u2705 **Clean Payment History:** 0 late payments - demonstrates payment discipline\n- \u2705 **No Defaults:** Zero default accounts - no past delinquencies\n- \u2705 **Low Existing Liabilities:** Liability ratio of 0.01 - minimal current debt burden\n- \u2705 **No Anomalies:** Risk score of 0 - no suspicious credit activity detected\n\n### **Negative Factors (Against Approval)** \u2717\n- \u274c **Below-Prime Credit Score:** 600 score is below the 620 prime threshold\n- \u274c **Unsustainable DTI Ratio:** 392.21% is catastrophically high - monthly obligations exceed income by 4x\n- \u274c **Employment Instability:** Part-time employment with only 2 years tenure creates income vulnerability\n- \u274c **Loan-to-Income Mismatch:** Requested loan amount is disproportionate to income level\n\n---\n\n## Executive Summary\n\n**Applicant Name:** Maxwell JR  \n**Overall Risk Assessment:** HIGH RISK with Mixed Signals\n\n### Status Assessment:\n- **Credit Behavior:** GOOD (clean payment history)\n- **Financial Capacity:** POOR (cannot afford debt obligations)\n- **Employment Stability:** FAIR-TO-POOR (part-time, limited tenure)\n- **Creditworthiness:** BELOW AVERAGE (600 score)\n\n---\n\n## Recommended Actions for Manual Review\n\n### **Option 1: Conditional Approval**\n- Reduce loan amount to **$50,000-$75,000 maximum** (achieves DTI ~15-20%)\n- Require **co-signer or collateral**\n- Implement **higher interest rate** (compensate for risk)\n- Request **proof of stable part-time income** (tax returns, pay stubs - 24 months)\n\n### **Option 2: Recommend Reapplication**\n- Applicant should secure **full-time employment** first\n- Allow **12-24 months tenure** in new position\n- Re-apply when **DTI ratio is below 43%**\n- Work to **improve credit score above 620** through payment discipline\n\n### **Option 3: Decline**\n- Loan amount requested is structurally unaffordable\n- Current financial situation does not support $1M loan on $60K annual income\n- High probability of default (95%+)\n\n---\n\n## Verdict Summary\n\n**Primary Issue:** The applicant has demonstrated good credit behavior and payment discipline; however, the **loan amount is fundamentally unaffordable** given their income level and employment status. The DTI ratio of 392% indicates the applicant cannot service this debt under any circumstances.\n\n**Recommendation:** **REQUIRES MANUAL UNDERWRITER REVIEW** - Strongly recommend **loan restructuring** (smaller amount) or **applicant reapplication** after achieving full-time employment and DTI reduction.\n\n**Risk Rating:** \ud83d\udd34 **HIGH RISK** - Proceed only with significant modifications to loan terms or decline.",
+    "[Compliance Agent] ---\n\n## \u2705 COMPLIANCE & ACTION ORCHESTRATION WORKFLOW - COMPLETED\n\n### **Workflow Status: FULLY EXECUTED**\n\n---\n\n## 1. Case Record Creation \u2705\n\n| Detail | Value |\n|--------|-------|\n| **Case ID** | CASE_APR001_20260704225907 |\n| **Applicant ID** | APR001 |\n| **Status** | CREATED |\n| **Creation Timestamp** | 2026-07-04T22:59:07.456866 |\n| **Decision** | REQUIRES_REVIEW |\n| **Risk Score** | 37.5/100 |\n| **Confidence Level** | 70% |\n\n**Record Summary:**\n- Formal case record successfully established in the audit system\n- All decision metrics captured with timestamp\n- Key risk factors documented for underwriter review\n- Case ready for manual adjudication\n\n---\n\n## 2. Decision Notification Sent \u2705\n\n| Detail | Value |\n|--------|-------|\n| **Notification ID** | NOTIF_APR001_20260704225907 |\n| **Status** | SENT |\n| **Sent Timestamp** | 2026-07-04T22:59:07 |\n| **Recipient** | APR001 (Maxwell JR) |\n| **Decision Status** | REQUIRES_REVIEW |\n\n**Notification Content:**\n- \u2713 Decision status clearly communicated\n- \u2713 Risk score and rationale provided\n- \u2713 Mixed risk signals explained (positive & negative factors)\n- \u2713 Recommended action paths outlined:\n  - Option 1: Restructure loan amount\n  - Option 2: Reapply with full-time employment\n- \u2713 Expected timeline: 5 business days for underwriter contact\n- \u2713 Contact information provided for applicant support\n\n---\n\n## 3. Compliance Audit Log Entry \u2705\n\n| Detail | Value |\n|--------|-------|\n| **Log ID** | LOG_CASE_APR001_20260704225907_225910 |\n| **Case Reference** | CASE_APR001_20260704225907 |\n| **Action Status** | LOGGED |\n| **Log Timestamp** | 2026-07-04T22:59:10.731730 |\n| **Decision** | REQUIRES_REVIEW |\n\n**Audit Trail Captured:**\n- \u2713 Post-decision workflow completion documented\n- \u2713 Case record creation confirmation logged\n- \u2713 Decision notification transmission confirmed\n- \u2713 Risk assessment details recorded:\n  - Risk Score: 37.5/100 (High Risk)\n  - DTI Ratio: 392.21% (Critical concern)\n  - Credit Score: 600 (Below prime)\n  - Employment Type: Part-time, 2.0 years\n- \u2713 Mitigating factors documented:\n  - Clean payment history (0 late payments)\n  - No default accounts\n- \u2713 Recommended next steps logged:\n  - Manual underwriter review required\n  - Loan restructuring or reapplication pathway\n\n---\n\n## Compliance Workflow Summary\n\n### **All Compliance Requirements Met** \u2713\n\n| Compliance Requirement | Status | Evidence |\n|------------------------|--------|----------|\n| **Formal Case Documentation** | \u2705 COMPLETE | Case ID: CASE_APR001_20260704225907 |\n| **Applicant Notification** | \u2705 COMPLETE | Notification ID: NOTIF_APR001_20260704225907 |\n| **Audit Trail Logging** | \u2705 COMPLETE | Log ID: LOG_CASE_APR001_20260704225907_225910 |\n| **Decision Rationale Documentation** | \u2705 COMPLETE | Risk analysis recorded |\n| **Regulatory Compliance** | \u2705 COMPLETE | Full audit trail maintained |\n| **Transparency** | \u2705 COMPLETE | Applicant informed of decision & options |\n\n---\n\n## Post-Decision Actions & Timeline\n\n### **For Applicant (Maxwell JR):**\n- \ud83d\udce7 **Day 0:** Decision notification received (REQUIRES_REVIEW status)\n- "
+  ]
+}

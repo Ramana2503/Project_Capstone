@@ -1,0 +1,54 @@
+{
+  "application": {
+    "applicant_id": "APP001",
+    "loan_amount": 100000.0,
+    "tenure_months": 60,
+    "timestamp": "2026-07-02T02:03:39.262554"
+  },
+  "applicant_profile": {
+    "applicant_id": "APP001",
+    "name": "John Smith",
+    "age": 35,
+    "income": 75000,
+    "employment_type": "Full-time",
+    "employment_years": 5,
+    "credit_score": 750,
+    "existing_liabilities": 15000,
+    "location": "New York",
+    "phone": "555-0101",
+    "email": "john.smith@email.com",
+    "credit_history": {
+      "accounts": 4,
+      "accounts_in_good_standing": 4,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 60,
+  "credit_history": {
+    "accounts": 4,
+    "accounts_in_good_standing": 4,
+    "late_payments": 0,
+    "default_accounts": 0
+  },
+  "application_complete": true,
+  "dti_ratio": null,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": null,
+  "anomaly_risk_score": null,
+  "employment_risk_factor": null,
+  "decision": null,
+  "final_risk_score": null,
+  "confidence_level": null,
+  "key_decision_factors": null,
+  "decision_explanation": null,
+  "case_id": null,
+  "notification_sent": null,
+  "compliance_action": null,
+  "status": "FAILED",
+  "errors": [
+    "Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CcbyYB5hfkeaordYxYZa8'}"
+  ],
+  "execution_log": []
+}

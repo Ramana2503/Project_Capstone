@@ -1,0 +1,243 @@
+{
+  "decisions": [
+    {
+      "case_id": "CASE_TEST001_20260703211909",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "risk_score": 18.5,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-03T21:19:09.425768",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_TEST001_20260703211935",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "risk_score": 18.5,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-03T21:19:35.175243",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_TEST001_20260703212238",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "risk_score": 18.5,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-03T21:22:38.758571",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_TEST001_20260703212345",
+      "applicant_id": "TEST001",
+      "decision": "APPROVED",
+      "risk_score": 18.5,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio",
+        "Strong credit score of 720",
+        "Zero late payments and no defaults",
+        "Clean credit history with no anomalies detected",
+        "Stable full-time employment with 5 years tenure",
+        "Low liability ratio of 0.12",
+        "Acceptable DTI ratio of 36.27%"
+      ],
+      "creation_timestamp": "2026-07-03T21:23:45.141147",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_AAP001_20260703212639",
+      "applicant_id": "AAP001",
+      "decision": "APPROVED",
+      "risk_score": 18.2,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio",
+        "Clean credit history with no late payments or defaults",
+        "Stable full-time employment",
+        "Low anomaly risk score",
+        "Manageable liability ratio"
+      ],
+      "creation_timestamp": "2026-07-03T21:26:39.900075",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704225212",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "risk_score": 18.2,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio",
+        "Clean credit history with no late payments or defaults",
+        "Stable full-time employment",
+        "Zero anomalies detected",
+        "Low employment risk factor",
+        "Manageable liability ratio"
+      ],
+      "creation_timestamp": "2026-07-04T22:52:12.216095",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704225552",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "risk_score": 18.2,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio",
+        "Clean credit history with 0 late payments and 0 defaults",
+        "Low employment risk factor (0.05)",
+        "No financial anomalies detected",
+        "Low liability ratio (0.10)"
+      ],
+      "creation_timestamp": "2026-07-04T22:55:52.458084",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704225552",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "risk_score": 18.2,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Good credit score (700-749)",
+        "Moderate debt-to-income ratio",
+        "Clean payment history (0 late payments, 0 defaults)",
+        "Low employment risk factor (0.05)",
+        "No anomalies detected in application",
+        "Stable full-time employment"
+      ],
+      "creation_timestamp": "2026-07-04T22:55:52.858869",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704225725",
+      "applicant_id": "APR001",
+      "decision": "APPROVED",
+      "risk_score": 28.8,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Poor credit score (600-649)",
+        "Moderate debt-to-income ratio",
+        "Clean payment history (0 late payments, 0 defaults)",
+        "No detected anomalies or inconsistencies",
+        "Stable full-time employment",
+        "Manageable liability ratio (10%)"
+      ],
+      "creation_timestamp": "2026-07-04T22:57:25.702769",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704225907",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 37.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Poor credit score (600-649)",
+        "Critically high debt-to-income ratio (392.21%)",
+        "Part-time employment with limited tenure (2.0 years)",
+        "Clean payment history (0 late payments)",
+        "No default accounts on record"
+      ],
+      "creation_timestamp": "2026-07-04T22:59:07.456866",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704230020",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 53.0,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score of 400 (below 600 prime threshold)",
+        "Critically high debt-to-income ratio of 392.21%",
+        "Part-time employment with only 2.0 years tenure",
+        "Monthly payment of $19,332.80 exceeds monthly income of $5,000",
+        "No payment delinquencies or defaults in credit history",
+        "Extreme mismatch between loan request and financial capacity"
+      ],
+      "creation_timestamp": "2026-07-04T23:00:20.987535",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704230145",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 54.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "Catastrophic debt-to-income ratio of 2323.28%",
+        "Unemployed status with 1.5 years employment history",
+        "Clean payment history with zero late payments and defaults",
+        "Loan amount ($1,000,000) far exceeds borrowing capacity"
+      ],
+      "creation_timestamp": "2026-07-04T23:01:45.276331",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704230151",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 54.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (400 - well below 600 threshold)",
+        "Unsustainable debt-to-income ratio (2323.28% - far exceeds 43% standard)",
+        "Unemployed status with high employment risk factor (0.6)",
+        "Clean payment history (0 late payments, 0 defaults) - mitigating factor",
+        "Loan amount ($1M) disproportionate to annual income ($10K)"
+      ],
+      "creation_timestamp": "2026-07-04T23:01:51.171236",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704230317",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 54.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (400 - critical tier)",
+        "Extremely high debt-to-income ratio (103,283%)",
+        "Unemployed status with minimal employment history",
+        "Suspicious loan amount mismatch ($10M request with $833/month income)",
+        "Zero late payments and defaults (positive indicator)"
+      ],
+      "creation_timestamp": "2026-07-04T23:03:17.929430",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    }
+  ]
+}

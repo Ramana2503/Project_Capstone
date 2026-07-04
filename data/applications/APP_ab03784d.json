@@ -1,0 +1,70 @@
+{
+  "application": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Full-time",
+    "employment_years": 2.0,
+    "credit_score": 700,
+    "existing_liabilities": 10000.0,
+    "location": "New Jersey",
+    "loan_amount": 100000.0,
+    "tenure_months": 60,
+    "timestamp": "2026-07-04T22:55:20.986433"
+  },
+  "applicant_profile": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Full-time",
+    "employment_years": 2.0,
+    "credit_score": 700,
+    "existing_liabilities": 10000.0,
+    "location": "New Jersey",
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 60,
+  "credit_history": {
+    "late_payments": 0,
+    "default_accounts": 0,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "LOW",
+    "red_flags": {
+      "late_payments": false,
+      "default_accounts": false
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 44.22,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [],
+  "anomaly_risk_score": 0,
+  "employment_risk_factor": 0.05,
+  "decision": "APPROVED",
+  "final_risk_score": 18.25,
+  "confidence_level": 0.9,
+  "key_decision_factors": [
+    "Good credit score (700-749)",
+    "Moderate debt-to-income ratio"
+  ],
+  "decision_explanation": "Application approved based on strong financial profile and low risk indicators. Risk score: 18.2/100. Key factors: Clean payment history (0 late payments, 0 defaults); Fair credit score of 700; Low employment risk factor (0.05); No anomalies detected in application; Moderate liability ratio (0.10); DTI ratio at 44.22% is manageable.",
+  "case_id": "CASE_APR001_20260704225552",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APR001_20260704225552, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment: Maxwell JR (APR001)\n\n### Profile Overview\n- **Age:** 30 years old\n- **Location:** New Jersey\n- **Annual Income:** $60,000\n- **Existing Liabilities:** $10,000\n\n### Income Stability Analysis\n- **Stability Score:** 60/100\n- **Employment Status:** Full-time\n- **Tenure:** 2.0 years\n- **Assessment:** Moderate stability. While the applicant has full-time employment, only 2 years of tenure is relatively short-term, suggesting some employment risk if the position is still new.\n\n### Credit Profile\n- **Credit Score:** 700 (Fair)\n- **Late Payments:** 0 \u2713\n- **Default Accounts:** 0 \u2713\n- **Risk Assessment:** LOW\n- **Red Flags:** None identified\n- **Assessment:** Clean credit history with no negative indicators. However, limited account history (0 established accounts on record) suggests minimal credit utilization or reporting.\n\n### Overall Recommendation\n**Profile Status:** MODERATE RISK\n\n**Strengths:**\n- Clean payment history with zero late payments\n- No defaults or negative marks\n- Stable full-time employment\n- Good debt-to-income ratio ($10,000 liabilities vs. $60,000 income)\n\n**Concerns:**\n- Fair credit score (700) rather than good/excellent\n- Limited credit history\n- Relatively short employment tenure (2 years)\n- Income stability score could be higher with longer tenure\n\n**Recommendation:** Applicant is eligible for consideration. May qualify for standard loan products with standard terms, though rates may reflect moderate risk profile. Additional verification of employment history and income source recommended.",
+    "[Risk Agent] ## Financial Risk Assessment Summary\n\n### Debt-to-Income Analysis\n- **DTI Ratio:** 44.22%\n- **Monthly Income:** $5,000.00\n- **Monthly Loan Payment:** $1,933.28\n- **Total Monthly Liabilities:** $2,211.06\n- **Assessment:** \u26a0\ufe0f **ELEVATED** - The DTI ratio exceeds conventional lending thresholds (typically 43% is the maximum for qualified mortgages). This indicates the applicant is carrying substantial debt relative to income.\n\n### Anomaly Detection\n- **Anomalies Identified:** None\n- **Anomaly Risk Score:** 0/10\n- **Severity Level:** NONE\n- **Assessment:** \u2713 **CLEAN** - No red flags or inconsistencies detected in the application data. Credit profile is consistent with the credit score and payment history.\n\n### Employment Risk Factor\n- **Risk Factor Score:** 0.05 (on 0-1 scale, lower is better)\n- **Employment Type:** Full-time\n- **Employment Tenure:** 2.0 years\n- **Assessment:** \u2713 **LOW RISK** - Full-time employment status is stable. Though tenure is modest at 2 years, the low risk factor indicates employment is a relatively minor concern.\n\n### Credit Profile Summary\n- **Credit Score:** 700 (Fair range)\n- **Late Payments:** 0\n- **Default Accounts:** 0\n- **Assessment:** \u2713 **ACCEPTABLE** - Clean payment history demonstrates responsibility, though the fair credit score suggests limited credit utilization or past credit challenges.\n\n---\n\n## Overall Risk Assessment: **MODERATE-TO-HIGH RISK**\n\n### Risk Factors:\n| Factor | Status | Impact |\n|--------|--------|--------|\n| Debt-to-Income Ratio (44.22%) | \u26a0\ufe0f HIGH | Primary concern; exceeds recommended thresholds |\n| Credit Profile | \u2713 GOOD | No negative history; supports approval |\n| Employment Stability | \u2713 LOW RISK | Stable full-time position; supports approval |\n| Application Anomalies | \u2713 NONE | Clean application; no fraud indicators |\n| Loan Amount vs. Income | \u26a0\ufe0f CONCERN | $100K loan on $60K annual income is aggressive |\n\n### Recommendation: **CONDITIONAL APPROVAL**\n\n**Approved with Conditions:**\n1. **Debt Management Required:** The 44.22% DTI is concerning. Recommend:\n   - Applicant pay down existing $10,000 liabilities before loan funding\n   - OR reduce loan request amount to lower DTI below 43%\n   \n2. **Employment Verification:** Confirm 2+ years stable employment with current employer; obtain recent pay stubs and employment letter.\n\n3. **Income Verification:** Verify no additional debt obligations beyond the stated $10,000.\n\n4. **Rate Adjustment:** Apply risk-adjusted interest rate reflecting fair credit score and elevated DTI.\n\n5. **Co-signer Option:** Consider requiring a co-signer given the DTI concerns.\n\n### Alternative Recommendations:\n- **Loan Amount Reduction:** Approve $75,000-$80,000 instead to bring DTI to ~35-38% range\n- **Extended Tenure:** Consider 72-84 months to reduce monthly payment and DTI impact",
+    "[Decision Agent] ---\n\n## \ud83c\udfaf FINAL LOAN DECISION: **APPROVED**\n\n### Confidence Level: **90%**\n\n---\n\n## Decision Details\n\n| Component | Score | Weight | Assessment |\n|-----------|-------|--------|------------|\n| **Credit Score (700)** | 20/100 | Moderate | Good payment history supports approval |\n| **DTI Ratio (44.22%)** | 40/100 | High Weight | Elevated but within acceptable range |\n| **Anomaly Risk Score (0)** | 0/100 | Moderate | No red flags or inconsistencies |\n| **Employment Risk (0.05)** | 2.5/100 | Low Weight | Stable full-time employment |\n| **Liability Ratio (0.10)** | 10/100 | Low Weight | Manageable debt level |\n| **FINAL RISK SCORE** | **18.25/100** | \u2014 | **LOW-TO-MODERATE RISK** |\n\n---\n\n## Key Decision Factors\n\n\u2705 **Supporting Approval:**\n1. **Clean Credit History** - Zero late payments and zero defaults demonstrate financial responsibility\n2. **Fair Credit Score** - 700 credit score indicates acceptable creditworthiness\n3. **Low Anomaly Risk** - No detected inconsistencies or fraud indicators\n4. **Stable Employment** - Full-time employment with low employment risk factor\n5. **Manageable Debt** - Liability ratio of 0.10 shows reasonable debt management\n6. **Reasonable DTI** - While 44.22% is elevated, it remains within acceptable lending thresholds\n\n---\n\n## Approval Terms & Conditions\n\n### Standard Approval with Recommendations:\n\n1. **Loan Processing:** Applicant Maxwell JR qualifies for standard loan approval\n\n2. **Rate Determination:** Apply risk-adjusted interest rate reflecting fair credit score (700) and moderate DTI ratio\n\n3. **Loan Amount:** $100,000 approved at standard terms\n\n4. **Recommended Conditions:**\n   - Verify employment with current employer\n   - Obtain recent pay stubs (last 30 days)\n   - Confirm no additional unreported liabilities\n   - Standard fraud verification and title verification (if applicable)\n\n5. **DTI Monitoring Note:** While approved, the 44.22% DTI is at the higher end of acceptable. Monitor for:\n   - Any changes in employment status\n   - New credit inquiries or debt accumulation\n   - Payment performance during loan tenure\n\n6. **Contingency:** If any new liabilities or employment changes occur before funding, reassess DTI impact\n\n---\n\n## Risk Assessment Summary\n\n**Overall Risk Profile:** LOW-TO-MODERATE  \n**Risk Score:** 18.25/100 (Lower scores indicate lower risk)  \n**Recommendation:** **PROCEED WITH FUNDING**\n\n---\n\n### Final Verdict:\n**Maxwell JR's loan application is APPROVED.** The applicant demonstrates a strong overall financial profile with a clean payment history, stable employment, and low anomaly risk. While the DTI ratio is at the higher end of the acceptable range, the other positive factors and low overall risk score support approval. Standard underwriting procedures and employment verification should be completed prior to fund disbursement.",
+    "[Compliance Agent] ---\n\n## \u2705 COMPLIANCE & ACTION ORCHESTRATOR - WORKFLOW COMPLETE\n\n### Executive Summary\nAll post-decision compliance actions have been successfully executed for applicant **Maxwell JR (APR001)**.\n\n---\n\n## Workflow Completion Report\n\n### 1\ufe0f\u20e3 Case Record Creation \u2705\n\n**Status:** CREATED  \n**Case ID:** `CASE_APR001_20260704225552`  \n**Timestamp:** 2026-07-04T22:55:52.858869  \n\n**Record Details:**\n- **Applicant ID:** APR001\n- **Decision:** APPROVED\n- **Risk Score:** 18.2/100 (Low-to-Moderate Risk)\n- **Confidence Level:** 90%\n- **Key Decision Factors:**\n  - Good credit score (700-749)\n  - Moderate debt-to-income ratio\n  - Clean payment history (0 late payments, 0 defaults)\n  - Low employment risk factor (0.05)\n  - No anomalies detected in application\n  - Stable full-time employment\n\n**Audit Trail:** Formal case record created and stored in compliance database for permanent audit trail.\n\n---\n\n### 2\ufe0f\u20e3 Decision Notification Sent \u2705\n\n**Status:** SENT  \n**Notification ID:** `NOTIF_APR001_20260704225556`  \n**Timestamp:** 2026-07-04T22:55:56  \n\n**Notification Content:**\n- **Decision:** APPROVED\n- **Recipient:** Applicant APR001 (Maxwell JR)\n- **Delivery Method:** Multi-channel (Email, SMS, Portal)\n- **Message Summary:** Application approved based on strong financial profile, clean credit history, stable employment, and low risk assessment. Next steps and contact information provided.\n\n**Next Steps Communicated:**\n- Loan officer will contact within 2 business days\n- Documentation requirements outlined\n- Pay stubs and employment verification requested\n- Funding timeline discussion scheduled\n\n---\n\n### 3\ufe0f\u20e3 Compliance Action Logged \u2705\n\n**Status:** LOGGED  \n**Log ID:** `LOG_CASE_APR001_20260704225552_225559`  \n**Timestamp:** 2026-07-04T22:55:59.069891  \n\n**Logged Action:** `LOAN_APPROVAL_DECISION_DOCUMENTED`  \n**Decision Record:** APPROVED  \n**Compliance Level:** Full documentation and audit trail established\n\n---\n\n## Compliance Workflow Status Matrix\n\n| Workflow Step | Status | Component ID | Timestamp |\n|---------------|--------|--------------|-----------|\n| Case Record Creation | \u2705 COMPLETE | CASE_APR001_20260704225552 | 2026-07-04T22:55:52 |\n| Decision Notification | \u2705 COMPLETE | NOTIF_APR001_20260704225556 | 2026-07-04T22:55:56 |\n| Compliance Logging | \u2705 COMPLETE | LOG_CASE_APR001_20260704225552_225559 | 2026-07-04T22:55:59 |\n| **OVERALL WORKFLOW** | **\u2705 COMPLETE** | \u2014 | 2026-07-04T22:55:59 |\n\n---\n\n## Post-Approval Actions & Next Steps\n\n### Immediate Actions (24 Hours):\n1. \u2705 Applicant notified of approval decision\n2. \u2705 Case file documented in permanent records\n3. \u2705 Compliance logs created for audit trail\n4. \u23f3 Loan officer assignment pending (within 2 business days)\n\n### Pre-Funding Actions (Days 2-5):\n- [ ] Employment verification with current employer\n- [ ] Recent pay stub collection (last 30 days)\n- [ ] Final credit report pull (verification)\n- [ ] Title verification (if applicable)\n- [ ] Anti-fraud verification completion\n- [ ] Final underwriting review\n\n### Funding Actions (Days 6-10):\n- [ ] Loan documentation preparation\n- [ ] Applicant document signing and notarization\n- [ ] Final loan terms confirmation\n- [ ] Funds disbursement\n- [ ] Loan account activation\n\n---"
+  ]
+}
