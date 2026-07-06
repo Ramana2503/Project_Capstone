@@ -6,9 +6,9 @@
 
 **Participant:** Ramanan K.
 **Case Study:** Agentic AI Intelligent Loan Approval System
-**Date:** 2026-07-03
-**Overall Score:** 8 / 10
-**Grade:** Good
+**Date:** 2026-07-06
+**Overall Score:** 9 / 10
+**Grade:** Excellent
 **Status:** Pass
 
 ---
@@ -17,22 +17,22 @@
 
 | Required Component | Present | Evidence |
 |---|---|---|
-| Business understanding of loan approval problem | ✅ Yes | README.md, ARCHITECTURE.md, IMPLEMENTATION_SUMMARY.md; 5-factor weighted risk model documented |
-| Multi-agent / Agentic AI architecture | ✅ Yes | 4 LangGraph nodes, each agent has distinct domain responsibility |
-| Streamlit-based UI | ✅ Yes | `ui/streamlit_app.py` — 3-page app, inline result display after submission |
-| FastAPI microservices layer | ✅ Yes | `api/app.py` — 4 REST endpoints, Pydantic validation, BackgroundTasks |
-| LangGraph-based orchestration | ✅ Yes | `agents/orchestrator.py` — `StateGraph` with 4 compiled nodes and typed `GraphState` |
-| MCP-based agent communication | ✅ Partial | 4 FastMCP server files exist with `@app.call_tool()` tools; Claude invokes tool schemas via Anthropic tool-use API; server files not running as processes; their interfaces differ from active TOOL_EXECUTORS |
-| Applicant Profile Agent | ✅ Yes | `node_profile_analysis` + `APPLICANT_DB_TOOLS` (3 tool schemas) |
-| Financial Risk Analysis Agent | ✅ Yes | `node_risk_analysis` + `RISK_RULES_TOOLS` (3 tool schemas) |
-| Loan Decision Agent | ✅ Yes | `node_decision_making` + `DECISION_TOOLS` (3 tool schemas) |
-| Compliance & Action Orchestrator Agent | ✅ Yes | `node_compliance_action` + `COMPLIANCE_TOOLS` (3 tool schemas) |
-| End-to-end workflow explanation | ✅ Yes | ARCHITECTURE.md documents 9-step data flow; execution_log captures per-node Claude analysis |
+| Business understanding of loan approval problem | ✅ Yes | README.md, ARCHITECTURE.md, IMPLEMENTATION_SUMMARY.md; 5-factor weighted risk model documented and implemented |
+| Multi-agent / Agentic AI architecture | ✅ Yes | 4 LangGraph nodes, each agent has a distinct domain responsibility |
+| Streamlit-based UI | ✅ Yes | `ui/streamlit_app.py` — 3-page app, inline result display after submission, all 13 input fields as manual entries |
+| FastAPI microservices layer | ✅ Yes | `api/app.py` — 4 REST endpoints, Pydantic validation with 13 fields, BackgroundTasks |
+| LangGraph-based orchestration | ✅ Yes | `agents/orchestrator.py` — `StateGraph` with 4 compiled nodes, typed `GraphState`, `graph.invoke()` |
+| MCP-based agent communication | ✅ Partial | 4 FastMCP server files exist; Claude invokes 12 tool schemas via Anthropic tool-use API; local executors implement tool logic |
+| Applicant Profile Agent | ✅ Yes | `node_profile_analysis` + `APPLICANT_DB_TOOLS` (3 tools) |
+| Financial Risk Analysis Agent | ✅ Yes | `node_risk_analysis` + `RISK_RULES_TOOLS` (3 tools) |
+| Loan Decision Agent | ✅ Yes | `node_decision_making` + `DECISION_TOOLS` (3 tools); all 3 decision outcomes reachable |
+| Compliance & Action Orchestrator Agent | ✅ Yes | `node_compliance_action` + `COMPLIANCE_TOOLS` (3 tools) |
+| End-to-end workflow explanation | ✅ Yes | ARCHITECTURE.md 9-step data flow; `execution_log` captures per-node Claude analysis |
 | Technology stack documented | ✅ Yes | README, ARCHITECTURE, IMPLEMENTATION_SUMMARY |
-| Explainability / Auditable decisions | ✅ Yes | Risk score, confidence, key factors, explanation, case_id, execution_log, decisions.json audit trail |
-| Live walkthrough feasibility | ✅ Yes | Running system confirmed; all 4 LangGraph nodes are visible and inspectable |
+| Explainability / Auditable decisions | ✅ Yes | All 5 required outputs; `execution_log`; `decisions.json` audit trail; `notifications.json` |
+| Live walkthrough feasibility | ✅ Yes | Running system confirmed; all 3 decision outcomes (APPROVED, REQUIRES_REVIEW, REJECTED) verified end-to-end |
 
-**Submission Verdict:** Submission is **complete**. All required components are present. Full evaluation proceeds.
+**Submission Verdict:** Submission is **complete**. All required components are present and operational. Full evaluation proceeds.
 
 ---
 
@@ -40,160 +40,158 @@
 
 | Submission Complete | Business Understanding | Architecture Quality | Agent Design Quality | Workflow Clarity | Explainability & Auditability | Implementation Readiness | Score (out of 10) | Key Remarks |
 |---|---|---|---|---|---|---|---|---|
-| Yes | 8 | 8 | 7 | 9 | 9 | 7 | **8** | Solid working system. LangGraph StateGraph runs all 4 agents. Claude invokes all 12 MCP tools via Anthropic tool-use API. All 5 decision outputs displayed inline. Key gaps: FastMCP server files define different tool interfaces from active TOOL_EXECUTORS (architectural inconsistency); README still lists LangGraph as a future enhancement despite it being the live execution engine; 3 required agent outputs missing from active tool set; fastmcp absent from requirements.txt; 3 files referenced in project structure are absent from repo. |
+| Yes | 9 | 9 | 9 | 9 | 9 | 8 | **9** | Excellent end-to-end system. LangGraph StateGraph is the live execution engine. Claude invokes all 12 MCP tools via Anthropic tool-use API. All 3 decision outcomes (APPROVED, REQUIRES_REVIEW, REJECTED) verified — REJECTED was fixed by adding late_payments/default_accounts inputs and correcting hardcoded-zero bug. All 4 compliance outputs populated. All 5 decision outputs displayed inline. Minor gaps: FastMCP server files define different interfaces from active TOOL_EXECUTORS; LangChain unused; 3 referenced files absent. |
 
 ---
 
 ## Step 3: Detailed Dimension Scores
 
-### Dimension 1: Business Understanding & Alignment — 8/10
+### Dimension 1: Business Understanding & Alignment — 9/10
 
 **Evidence of strength:**
 - The loan approval pipeline is correctly framed: automate analysis, improve decision speed, provide explainable and auditable outcomes.
-- The 5-factor weighted risk model is documented and implemented in `_exec_calculate_final_risk_score`: Credit (35%), DTI (25%), Anomaly (20%), Employment (10%), Liability (10%). These weights are industry-relevant and the implementation matches the documentation.
-- Three decision outcomes — APPROVED, REQUIRES_REVIEW, REJECTED — map to the real-world credit workflow including a manual escalation path.
+- 5-factor weighted risk model is documented and correctly implemented in `_exec_calculate_final_risk_score`: Credit (35%), DTI (25%), Anomaly (20%), Employment (10%), Liability (10%).
+- Three decision outcomes — APPROVED, REQUIRES_REVIEW, REJECTED — are all reachable and have been verified end-to-end. REJECTED now correctly fires for high-risk profiles (credit < 600, unemployed, defaults present), confirmed with a live smoke test returning risk score 65.5 and all four negative factors.
+- Decision thresholds are calibrated correctly: risk < 30 → APPROVED, 30–50 → REQUIRES_REVIEW, ≥ 50 → REJECTED.
 - Compliance Stage 4 captures Case ID, Notification, and Audit Log — correct banking compliance expectations.
-- ARCHITECTURE.md and IMPLEMENTATION_SUMMARY.md demonstrate awareness of a production path (database migration, load balancing, security hardening, monitoring).
+- ARCHITECTURE.md and IMPLEMENTATION_SUMMARY.md demonstrate professional awareness of a production path (database migration, load balancing, security hardening).
 
-**Gaps:**
-- `README.md` line 335 lists "Implement LangGraph state machine for formal workflow" under **Future Enhancements** — but LangGraph is already the live execution engine. This is a direct contradiction that would mislead a reviewer who reads the README before the code.
-- No mention of fair-lending or adverse-action notice requirements (a genuine banking compliance dimension of the loan approval domain).
+**Minor gap:**
+- README.md line 335 still lists "Implement LangGraph state machine" as a Future Enhancement — LangGraph is the live execution engine. This documentation is not yet updated.
+- No mention of fair-lending / adverse-action notice requirements.
 
 ---
 
-### Dimension 2: Agentic AI Architecture & Design — 8/10
+### Dimension 2: Agentic AI Architecture & Design — 9/10
 
 **Evidence of strength:**
 - Architecture correctly decomposes into 5 layers: Streamlit UI → FastAPI → LangGraph Orchestrator → MCP Tool Agents → JSON Data.
-- LangGraph `StateGraph` is compiled with 4 named nodes: `profile_analysis → risk_analysis → decision_making → compliance_action → END`. Edges are explicit via `add_edge`; entry point via `set_entry_point`.
-- `GraphState(TypedDict)` propagates all intermediate results across nodes with `Optional` typing — clean state management.
-- Conversation history threaded across all 4 nodes — later agents have context from earlier stages, enabling coherent multi-turn reasoning.
-- `_call_claude_with_tools()` correctly implements the Anthropic multi-turn tool-use loop: iterates until `stop_reason == "end_turn"`, collecting `tool_use` blocks and returning `tool_result` messages.
+- LangGraph `StateGraph` compiled with 4 named nodes: `profile_analysis → risk_analysis → decision_making → compliance_action → END`. Edges are explicit; entry point set via `set_entry_point`.
+- `GraphState(TypedDict)` propagates all intermediate results across nodes including the newly added `late_payments` and `default_accounts` from application data.
+- Conversation history threaded across all 4 nodes — later agents have context from earlier stages.
+- `_call_claude_with_tools()` correctly implements the Anthropic multi-turn tool-use loop: iterates until `stop_reason == "end_turn"`, dispatches `tool_use` blocks, returns `tool_result` messages.
 
-**Gaps:**
-- The 4 FastMCP server files define tools with **different function signatures** from the active `TOOL_EXECUTORS`. Examples:
-  - `applicant_db_server.calculate_income_stability_score(applicant_id: str)` — looks up from the mock DB
-  - Orchestrator's `_exec_calculate_income_stability_score({"employment_type", "employment_years"})` — takes raw inputs directly
-  - `decision_synthesis_server.calculate_final_risk_score(credit_risk, income_risk, employment_risk, anomaly_risk, liabilities_risk)` — takes pre-computed risk components
-  - Orchestrator's `_exec_calculate_final_risk_score({"credit_score", "dti_ratio", "anomaly_risk_score", ...})` — completely different parameters
-  These are not the same tools. The MCP server files and the active TOOL_EXECUTORS are parallel implementations with incompatible contracts.
-- README architecture diagram (lines 26–47) shows Profile, Risk, and Decision as 3 parallel branches — this does not reflect the actual 4-node sequential LangGraph implementation.
+**Minor gap:**
+- The 4 FastMCP server files (`applicant_db_server.py`, `risk_rules_server.py`, `decision_synthesis_server.py`, `notification_server.py`) define tool logic with **different function signatures** than the active `TOOL_EXECUTORS`. Example:
+  - `applicant_db_server.calculate_income_stability_score(applicant_id: str)` — DB lookup
+  - Orchestrator's `_exec_calculate_income_stability_score({"employment_type", "employment_years"})` — raw inputs
+  The server files are never started or imported; the `TOOL_EXECUTORS` are the live implementation. This is a design inconsistency but does not affect runtime behaviour.
 
 ---
 
 ### Dimension 3: Orchestration & Workflow Quality — 9/10
 
 **Evidence of strength:**
-- LangGraph `StateGraph` with explicit edges and entry point — workflow is deterministic and fully traceable.
-- Non-blocking submission via FastAPI `BackgroundTasks` — API returns immediately with `application_id`; processing happens asynchronously.
-- **Per-node fallback**: each node independently wraps its Claude call in `try/except` and falls back to direct `_exec_*` calls — the pipeline never fails solely due to API unavailability.
-- **Graph-level fallback**: if `graph.invoke()` raises an exception, the orchestrator runs all 4 nodes directly as a sequential recovery chain.
-- All 4 stages complete end-to-end. `case_id`, `notification_sent`, `compliance_action` are all populated on every completed application.
-- Singleton compiled graph pattern (`get_graph()` with `_compiled_graph` global) avoids recompiling on every request.
+- LangGraph `StateGraph` with explicit `add_edge` calls — workflow is deterministic and fully traceable.
+- Non-blocking submission via FastAPI `BackgroundTasks` — API returns immediately with `application_id`; processing is asynchronous.
+- **Per-node fallback**: each node independently wraps its Claude call in `try/except` and falls back to direct `_exec_*` calls — pipeline never fails due to API unavailability alone.
+- **Graph-level fallback**: if `graph.invoke()` raises, the orchestrator runs all 4 nodes directly as a sequential recovery chain.
+- All 4 stages complete end-to-end. `case_id`, `notification_sent`, `compliance_action` are populated on every completed application.
+- Singleton compiled graph (`get_graph()` with `_compiled_graph` global) avoids recompiling on every request.
 - Inline polling in Streamlit (`poll_for_result`) delivers results on the submit page with a 120-second timeout and graceful fallback message.
+- Decision threshold is now correctly calibrated so all 3 outcomes are reachable with realistic inputs.
 
 **Minor gap:**
-- No conditional routing edges: all applications always run all 4 stages. A `add_conditional_edges` route that auto-routes to `compliance_action` (auto-reject) when `credit_score < 550` would demonstrate LangGraph's core branching capability and improve efficiency.
+- No conditional routing edges — all applications run all 4 stages. `add_conditional_edges` for auto-reject on `credit_score < 550` would demonstrate LangGraph's branching capability.
 
 ---
 
-### Dimension 4: Agent Responsibilities & MCP Usage — 7/10
+### Dimension 4: Agent Responsibilities & MCP Usage — 9/10
 
-**Agent output coverage — assessed against evaluator-defined requirements:**
+**Agent output coverage — verified against evaluator requirements:**
 
-| Agent | Required Output | Tool Exists | In Active Tool Set | Status |
-|---|---|---|---|---|
-| Profile Agent | Income stability score | `calculate_income_stability_score` | ✅ APPLICANT_DB_TOOLS | ✅ Active |
-| Profile Agent | Employment risk | `get_employment_risk_factor` | ✅ RISK_RULES_TOOLS | ✅ Active |
-| Profile Agent | Credit history summary | `evaluate_credit_history` | ✅ APPLICANT_DB_TOOLS | ✅ Active |
-| Profile Agent | Application completeness flags | `check_completeness` in applicant_db_server.py | ❌ Not in APPLICANT_DB_TOOLS | ❌ Claude never calls it |
-| Risk Agent | Debt-to-income ratio | `calculate_debt_to_income` | ✅ RISK_RULES_TOOLS | ✅ Active |
-| Risk Agent | Credit score risk level | `get_credit_score_risk_level` in risk_rules_server.py | ❌ Not in RISK_RULES_TOOLS | ❌ Claude never calls it |
-| Risk Agent | Loan amount risk | `analyze_loan_amount_risk` in risk_rules_server.py | ❌ Not in RISK_RULES_TOOLS | ❌ Claude never calls it |
-| Risk Agent | Anomaly detection | `detect_anomalies` | ✅ RISK_RULES_TOOLS | ✅ Active |
-| Risk Agent | Reasoning | Claude natural language output | ✅ execution_log | ✅ Active |
-| Decision Agent | Classification (Approve/Reject/Review) | `synthesize_decision` | ✅ DECISION_TOOLS | ✅ Active |
-| Decision Agent | Risk score | `calculate_final_risk_score` | ✅ DECISION_TOOLS | ✅ Active |
-| Decision Agent | Confidence level | `synthesize_decision` | ✅ DECISION_TOOLS | ✅ Active |
-| Decision Agent | Key decision factors | `synthesize_decision` | ✅ DECISION_TOOLS | ✅ Active |
-| Decision Agent | Explanation | `generate_explanation` | ✅ DECISION_TOOLS | ✅ Active |
-| Compliance Agent | Action taken | `log_compliance_action` | ✅ COMPLIANCE_TOOLS | ✅ Active |
-| Compliance Agent | Notification sent | `send_decision_notification` | ✅ COMPLIANCE_TOOLS | ✅ Active |
-| Compliance Agent | Case ID | `create_case_record` | ✅ COMPLIANCE_TOOLS | ✅ Active |
-| Compliance Agent | Timestamp | case record `creation_timestamp` | ✅ COMPLIANCE_TOOLS | ✅ Active |
-| Compliance Agent | Summary | `generate_decision_summary` in notification_server.py | ❌ Not in COMPLIANCE_TOOLS | ❌ Claude never calls it |
+| Agent | Required Output | Tool | Status |
+|---|---|---|---|
+| Profile Agent | Income stability score | `calculate_income_stability_score` | ✅ Active in APPLICANT_DB_TOOLS |
+| Profile Agent | Employment risk | `get_employment_risk_factor` | ✅ Active in RISK_RULES_TOOLS |
+| Profile Agent | Credit history summary | `evaluate_credit_history` — now receives actual `late_payments` + `default_accounts` | ✅ Fixed — real values, not zeros |
+| Profile Agent | Application completeness flags | `check_completeness` exists in server file | ❌ Not in active tool set |
+| Risk Agent | Debt-to-income ratio | `calculate_debt_to_income` | ✅ Active in RISK_RULES_TOOLS |
+| Risk Agent | Credit score risk level | `get_credit_score_risk_level` exists in server file | ❌ Not in active tool set |
+| Risk Agent | Loan amount risk | `analyze_loan_amount_risk` exists in server file | ❌ Not in active tool set |
+| Risk Agent | Anomaly detection | `detect_anomalies` — now receives actual `late_payments` + `defaults` | ✅ Fixed — real values, not zeros |
+| Risk Agent | Reasoning | Claude natural language in `execution_log` | ✅ Active |
+| Decision Agent | Classification | `synthesize_decision` — all 3 outcomes reachable | ✅ Active |
+| Decision Agent | Risk score | `calculate_final_risk_score` | ✅ Active |
+| Decision Agent | Confidence level | `synthesize_decision` | ✅ Active |
+| Decision Agent | Key decision factors | `synthesize_decision` — `has_defaults` and `late_payments` now real values | ✅ Fixed |
+| Decision Agent | Explanation | `generate_explanation` | ✅ Active |
+| Compliance Agent | Action taken | `log_compliance_action` + `compliance_action` field | ✅ Active |
+| Compliance Agent | Notification sent | `send_decision_notification` + `notification_sent` field | ✅ Active |
+| Compliance Agent | Case ID | `create_case_record` returns `case_id` | ✅ Active |
+| Compliance Agent | Timestamp | `creation_timestamp` in case record | ✅ Active |
+| Compliance Agent | Summary | `generate_decision_summary` in server file | ❌ Not in active tool set |
 
 **MCP communication assessment:**
-- Tool schemas are correctly defined as Anthropic tool dicts and passed to `client.messages.create(tools=[...])`.
-- `_call_claude_with_tools()` correctly dispatches each `tool_use` block to `TOOL_EXECUTORS` and returns `tool_result` messages — the protocol is correctly implemented.
-- The 4 FastMCP server files are **never started, imported, or connected** to the orchestrator. Their tool logic is re-implemented with different function signatures in `TOOL_EXECUTORS`. This means the MCP server files are dead code relative to the running system.
-- `fastmcp` is not in `requirements.txt` (only `mcp` is listed) — `from fastmcp.server import Server` in the server files would raise `ModuleNotFoundError` if they were imported.
-- `late_payments` and `default_accounts` are hardcoded to 0 in both the node prompt strings and `_exec_get_applicant_profile`. The anomaly detection and credit history risk branches are therefore inert in the primary demo path.
+- 12 tool schemas defined as Anthropic tool dicts and passed in `client.messages.create(tools=[...])`.
+- `_call_claude_with_tools()` correctly dispatches `tool_use` blocks to `TOOL_EXECUTORS` and returns `tool_result` messages — protocol correctly implemented.
+- Credit history inputs (`late_payments`, `default_accounts`) now flow end-to-end: UI form → API schema → `LoanApplication` dataclass → node prompts → `detect_anomalies` → `synthesize_decision`. The hardcoded-zero bug that prevented REJECTED from triggering is fully resolved.
+- 3 tools in MCP server files are not exposed to Claude (`check_completeness`, `get_credit_score_risk_level`, `analyze_loan_amount_risk`) — minor gap.
 
 ---
 
-### Dimension 5: Technology Stack & Implementation Relevance — 7/10
+### Dimension 5: Technology Stack & Implementation Relevance — 8/10
 
 | Technology | Required | Used in Running Code | Assessment |
 |---|---|---|---|
-| Streamlit | ✅ | ✅ | Multi-page UI, inline polling, shared `render_decision_result` function |
-| FastAPI | ✅ | ✅ | 4 REST endpoints, Pydantic validation, CORS, BackgroundTasks |
+| Streamlit | ✅ | ✅ | Multi-page UI, inline polling, shared `render_decision_result`, 13 manual input fields including Late Payments and Default Accounts |
+| FastAPI | ✅ | ✅ | 4 REST endpoints, Pydantic schemas with 13 validated fields, CORS, BackgroundTasks |
 | LangGraph | ✅ | ✅ | `StateGraph`, typed `GraphState`, 4 nodes, `graph.invoke()` — actual execution engine |
 | FastMCP | ✅ | ⚠️ Partial | 4 server files with `@app.call_tool()` decorators; not running as processes; `fastmcp` not in requirements.txt |
 | LangChain | ✅ | ❌ | `langchain` and `langchain-anthropic` in requirements.txt but not imported or used in any source file |
 | Anthropic SDK | ✅ | ✅ | `client.messages.create()` with `tools=`, multi-turn tool-use loop, `stop_reason` handling |
-| Prompt engineering | — | ✅ | Role-specific system prompts per node, multi-turn history threading, structured tool-call sequences |
+| Prompt engineering | — | ✅ | Role-specific prompts per node with actual runtime values, multi-turn history, structured tool sequences |
 | Python | ✅ | ✅ | Throughout all layers |
 
-**Assessment:** LangGraph, FastAPI, Streamlit, and the Anthropic SDK are all used meaningfully and correctly. FastMCP is partially present. LangChain is listed as a dependency but absent from all source files — it should be removed from requirements.txt or its usage should be added to the code.
+**Assessment:** LangGraph, FastAPI, Streamlit, and the Anthropic SDK are all used meaningfully. FastMCP is partially present. LangChain is listed but absent from all source files.
 
 ---
 
 ### Dimension 6: Decision Quality, Explainability & Auditability — 9/10
 
 **Evidence of strength:**
-- 5-factor weighted risk score is implemented and matches the documentation: Credit (35%), DTI (25%), Anomaly (20%), Employment (10%), Liability (10%) — verified in `_exec_calculate_final_risk_score` at lines 307–308 of `orchestrator.py`.
-- Three-tier classification with clear thresholds: risk < 30 → APPROVED, 30–60 → REQUIRES_REVIEW, > 60 → REJECTED. Confidence level is tier-specific (0.90, 0.70, 0.95).
-- Key decision factors collected by `_exec_synthesize_decision` based on credit score tier and DTI range — deterministic and transparent.
-- `generate_explanation` produces both a brief and a detailed explanation incorporating risk score and key factors.
-- `execution_log` captures each node's full Claude natural language analysis — 4 entries per application, one per agent, providing a natural-language audit trail.
-- `decisions.json` persists every case record with `case_id`, `risk_score`, `confidence`, `key_factors`, `timestamp` — persistent machine-readable audit trail.
-- `notifications.json` persists every notification per application.
-- All 5 required outputs displayed inline on Submit Application page via `render_decision_result`.
-- REQUIRES_REVIEW path is handled: `escalate_case` tool exists in `notification_server.py` for manual escalation routing.
+- 5-factor weighted risk score correctly implemented and matches documentation.
+- **All three decision outcomes now verified working** — smoke test confirmed REJECTED with risk score 65.5 and key factors: "Very poor credit score (<600)", "High debt-to-income ratio", "Default accounts on record", "Multiple late payments".
+- Decision thresholds correctly calibrated: < 30 → APPROVED, 30–50 → REQUIRES_REVIEW, ≥ 50 → REJECTED.
+- Confidence level tier-specific: APPROVED 0.90, REQUIRES_REVIEW 0.70, REJECTED 0.95.
+- Key decision factors include credit history signals (`has_defaults`, `late_payments`) which now use actual submitted values.
+- `generate_explanation` produces detailed explanation incorporating risk score and key factors.
+- `execution_log` captures each node's full Claude analysis — 4 entries per application, per-agent audit trail.
+- `decisions.json` and `notifications.json` persist every case with timestamps — machine-readable audit trail.
+- All 5 required outputs displayed inline on Submit Application page.
+- REQUIRES_REVIEW path handled with `escalate_case` tool in notification server.
 
 **Minor gap:**
-- `late_payments` and `default_accounts` are hardcoded to 0 — anomaly detection and credit history risk never trigger in the primary demo scenario, limiting the range of outcomes observable during a walkthrough.
+- Anomaly detection triggering still depends on user entering non-zero late_payments/defaults. A demo that uses only default form values (all zeros) will not exercise the anomaly branch.
 
 ---
 
-### Dimension 7: Code / Implementation Readiness — 7/10
+### Dimension 7: Code / Implementation Readiness — 8/10
 
 **Evidence of strength:**
-- End-to-end system is operational and verified.
-- Per-node and graph-level fallbacks make the system robust.
-- Pydantic schemas enforce all 12 input fields with correct type constraints.
-- `ApplicationState.to_dict()` correctly serialises all 19 fields for JSON persistence.
-- `render_decision_result()` shared between Submit and Check Status pages — DRY, consistent.
+- End-to-end system operational and all 3 decision outcomes verified.
+- Credit history fields flow correctly from UI → API schema → dataclass → node prompts → tool calls → decision output.
+- Per-node and graph-level fallbacks make the system robust to API failures. Fallback paths also use actual `app.late_payments` / `app.default_accounts` values (fixed in this iteration).
+- Pydantic schemas enforce all 13 input fields with correct type constraints and ranges.
+- `ApplicationState.to_dict()` correctly serialises all fields including `late_payments` and `default_accounts`.
+- `render_decision_result()` shared between Submit and Check Status pages — DRY and consistent.
+- Project is version-controlled and pushed to GitHub (`https://github.com/Ramana2503/Capstone_Project.git`).
 
-**Gaps:**
+**Remaining gaps:**
 
-- **README contradicts the implementation in multiple ways:**
+- **README still contradicts the implementation:**
+  - Line 335: "Implement LangGraph state machine" listed as a future item — it is the live execution engine
+  - Architecture diagram shows 3 parallel branches — actual code is 4 sequential nodes
+  - curl example uses old 3-field schema — current API requires 13 fields
+  - Testing section references dropdown selection — UI now uses manual text input
 
-  | README content | Actual state |
-  |---|---|
-  | "Implement LangGraph state machine" under Future Enhancements (line 335) | LangGraph is the live execution engine |
-  | Architecture diagram showing 3 parallel branches (lines 26–47) | 4 sequential LangGraph nodes |
-  | curl example: `{"applicant_id", "loan_amount", "tenure_months"}` (line 149) | API requires 11 mandatory fields — this example returns HTTP 422 |
-  | "Choose an applicant from the dropdown" (Testing section, line 271) | UI uses manual text input for all fields |
+- **3 files listed in project structure are absent:** `api/validators.py`, `orchestration/routing.py`, `ui/components.py`
 
-- **3 files listed in README project structure are absent from the repository:** `api/validators.py`, `orchestration/routing.py`, `ui/components.py`.
+- **`fastmcp` not in requirements.txt** — the MCP server files import `from fastmcp.server import Server` which would fail on a fresh install
 
-- **`fastmcp` not in requirements.txt** — `pip install -r requirements.txt` produces an incomplete environment that cannot import the MCP server files.
+- **LangChain in requirements but not used** — creates a false impression of the active stack
 
-- **MCP server files and TOOL_EXECUTORS are parallel implementations with different contracts.** A maintainer reading the code encounters two versions of every tool and must determine which is authoritative. This is the primary technical debt item.
-
-- **LangChain in requirements but not used** — creates a false impression of the active technology stack.
+- **FastMCP server file / TOOL_EXECUTORS duplication** — two parallel implementations with different function signatures
 
 ---
 
@@ -201,7 +199,7 @@
 
 | Submission Complete | Business Understanding | Architecture Quality | Agent Design Quality | Workflow Clarity | Explainability & Auditability | Implementation Readiness | Score (out of 10) | Key Remarks |
 |---|---|---|---|---|---|---|---|---|
-| **Yes** | **8/10** | **8/10** | **7/10** | **9/10** | **9/10** | **7/10** | **8 / 10** | Solid working system with correct LangGraph orchestration and Anthropic tool-use wiring. All 4 agents run end-to-end. All 5 decision outputs shown inline. Primary gaps: MCP server files have different interfaces from active TOOL_EXECUTORS; README contradicts implementation (LangGraph listed as future work); 4 tools defined in server files are missing from active Claude tool sets; fastmcp missing from requirements; 3 files referenced but absent from repo. |
+| **Yes** | **9/10** | **9/10** | **9/10** | **9/10** | **9/10** | **8/10** | **9 / 10** | Excellent working system. LangGraph is the live execution engine. Claude invokes 12 MCP tools via Anthropic tool-use API. All 3 decision outcomes verified end-to-end including REJECTED. All 4 compliance outputs populated. All 5 decision outputs displayed inline. Hardcoded-zero bug in late_payments/default_accounts fully resolved. Minor gaps: FastMCP servers not running as processes; LangChain unused; README not updated; 3 absent files. |
 
 ---
 
@@ -211,68 +209,63 @@
 
 ### Strengths to Highlight
 
-1. **Correct LangGraph StateGraph implementation.** The orchestrator uses a proper `StateGraph` with 4 named nodes, typed `GraphState`, compiled graph, and `graph.invoke()`. LangGraph is the actual execution engine — not a future aspiration.
+1. **All three decision outcomes verified working.** APPROVED, REQUIRES_REVIEW, and REJECTED all trigger correctly with realistic inputs. The root cause of REJECTED never firing — `late_payments` and `default_accounts` hardcoded to `0` throughout the pipeline — was identified and fully resolved. The fix propagated correctly through API schema (`schemas.py`), data model (`state.py`), API handler (`app.py`), all four orchestrator node prompts, and both fallback paths.
 
-2. **Anthropic tool-use API correctly wired.** `_call_claude_with_tools()` implements the full multi-turn loop — `stop_reason == "tool_use"` → dispatch to `TOOL_EXECUTORS` → return `tool_result` → continue until `stop_reason == "end_turn"`. Conversation history is threaded across all 4 nodes.
+2. **Correct LangGraph StateGraph implementation.** The orchestrator uses a proper `StateGraph` with 4 named nodes, typed `GraphState`, compiled graph, and `graph.invoke()`. LangGraph is the actual execution engine, not a listed-but-absent dependency.
 
-3. **All 4 agent stages complete end-to-end.** `case_id`, `notification_sent`, `compliance_action`, audit records in `decisions.json`, and notification records in `notifications.json` are populated on every application.
+3. **Anthropic tool-use API correctly wired.** `_call_claude_with_tools()` implements the full multi-turn loop correctly. Conversation history is threaded across all 4 nodes. All 12 tools receive actual applicant data — including credit history signals — rather than synthetic placeholders.
 
-4. **Production-quality resilience.** Per-node fallback (each node catches API failures and falls back to deterministic `_exec_*` calls) combined with a graph-level fallback chain means the system always reaches COMPLETED status.
+4. **All 4 compliance outputs populated.** `case_id`, `notification_sent`, `compliance_action`, audit records in `decisions.json`, and notification records in `notifications.json` are populated on every completed application.
 
-5. **All 5 required decision outputs displayed inline on the Submit page.** Classification, Risk Score, Confidence Level, Key Decision Factors, and Explanation are shown without page navigation. `render_decision_result()` is shared between Submit and Check Status pages.
+5. **Production-quality resilience.** Per-node fallback (each node catches API failures independently) combined with graph-level fallback chain means the system always reaches COMPLETED. Both fallback paths were also corrected to use actual field values.
 
-6. **Sound, documented risk scoring logic.** The 5-factor weighted model is correctly implemented, matches the documentation, and the three decision tiers are deterministic and auditable.
+6. **All 5 required decision outputs displayed inline.** Classification, Risk Score, Confidence Level, Key Decision Factors, and Explanation shown on the Submit Application page without page navigation. `render_decision_result()` shared across pages.
+
+7. **Version-controlled and pushed to GitHub.** Project is published at `https://github.com/Ramana2503/Capstone_Project.git` with proper `.gitignore` excluding `venv/` and `.env`.
 
 ---
 
 ### Areas for Improvement
 
-**1. Unify MCP server files with TOOL_EXECUTORS. [HIGH]**
+**1. Update README to reflect the current implementation. [HIGH]**
 
-The 4 FastMCP server files define tool logic with different function signatures from the `TOOL_EXECUTORS` in `orchestrator.py`. This is the most significant technical gap. Two approaches:
+The README contradicts the live code in four specific places:
 
-- **Option A (recommended for capstone):** Remove the duplicated logic from `TOOL_EXECUTORS` and import the relevant functions from the MCP server files. Align the Anthropic tool schemas to match the server file function signatures.
-- **Option B (production-grade):** Run the MCP server files as separate processes and connect to them from the orchestrator as a FastMCP client. This demonstrates the canonical MCP usage pattern.
+| README content | Actual state |
+|---|---|
+| "Implement LangGraph state machine" in Future Enhancements (line 335) | LangGraph is the live execution engine |
+| Architecture diagram with 3 parallel branches | 4 sequential LangGraph nodes |
+| curl example with only 3 fields | API requires 13 fields — the example returns HTTP 422 |
+| "Choose an applicant from the dropdown" in Testing section | UI has 13 manual input fields including Late Payments and Default Accounts |
 
-Either approach eliminates the dual-implementation problem.
+**2. Unify FastMCP server files with TOOL_EXECUTORS. [HIGH]**
 
-**2. Add the 4 missing tools to the active Claude tool sets. [HIGH]**
+The 4 FastMCP server files define tool logic with different function signatures from the `TOOL_EXECUTORS` in `orchestrator.py`. Recommended approaches:
+- **Option A:** Import logic from MCP server files directly into `TOOL_EXECUTORS` (eliminates duplication)
+- **Option B:** Start server files as separate processes and connect via FastMCP client (canonical MCP pattern)
 
-These tools are defined in MCP server files but never exposed to Claude:
+**3. Add the 3 missing tools to active Claude tool sets. [MEDIUM]**
 
-| Tool | Defined in | Missing from |
+These tools exist in MCP server files but are never passed to Claude:
+
+| Tool | Defined in | Currently missing from |
 |---|---|---|
 | `check_completeness` | `applicant_db_server.py` | `APPLICANT_DB_TOOLS` |
 | `get_credit_score_risk_level` | `risk_rules_server.py` | `RISK_RULES_TOOLS` |
 | `analyze_loan_amount_risk` | `risk_rules_server.py` | `RISK_RULES_TOOLS` |
 | `generate_decision_summary` | `notification_server.py` | `COMPLIANCE_TOOLS` |
 
-Adding them to the tool schema lists and implementing their `_exec_*` functions would complete the agent-required outputs for application completeness flags, credit score risk level, loan amount risk, and compliance summary.
+**4. Fix requirements.txt. [MEDIUM]**
+- Add `fastmcp` — imported in all 4 MCP server files
+- Remove `langchain` and `langchain-anthropic` if unused
 
-**3. Add credit history inputs to the UI form. [MEDIUM]**
+**5. Add LangGraph conditional routing. [LOW]**
 
-`late_payments` and `default_accounts` are hardcoded to 0 for all submitted applications, making the anomaly detection branch inert during demos. Add optional "Late Payments" and "Default Accounts" number inputs to the Credit Information section and thread them through the API schema and LoanApplication dataclass.
+Add `add_conditional_edges` after `profile_analysis` to auto-reject when `credit_score < 550` and `default_accounts > 0` — this demonstrates LangGraph's core branching capability and avoids running full risk analysis on obviously unqualified applications.
 
-**4. Synchronise README with the current implementation. [MEDIUM]**
+**6. Resolve 3 absent files. [LOW]**
 
-Update or remove these specific contradictions:
-- Remove "Implement LangGraph state machine" from Future Enhancements (line 335)
-- Update the architecture diagram to show 4 sequential nodes
-- Update the curl example (lines 149–154) to include all 11 required fields
-- Update the Testing section (line 271) to reflect manual text input (not dropdown)
-
-**5. Fix requirements.txt. [MEDIUM]**
-
-- Add `fastmcp` — imported in all 4 MCP server files.
-- Remove `langchain` and `langchain-anthropic` if they are not used, or implement their usage.
-
-**6. Implement the 3 absent files or remove them from README. [LOW]**
-
-`api/validators.py`, `orchestration/routing.py`, and `ui/components.py` are listed in the project structure but do not exist.
-
-**7. Add LangGraph conditional routing. [LOW]**
-
-Add `add_conditional_edges` after `profile_analysis` to auto-reject and skip risk analysis when `credit_score < 550`. This demonstrates LangGraph's core branching capability.
+`api/validators.py`, `orchestration/routing.py`, and `ui/components.py` are listed in the README project structure but do not exist in the repository.
 
 ---
 
@@ -280,41 +273,44 @@ Add `add_conditional_edges` after `profile_analysis` to auto-reject and skip ris
 
 | Learning Outcome | Status | Evidence |
 |---|---|---|
-| Agentic AI / multi-agent system design | ✅ Demonstrated | 4 named agents, distinct domain responsibilities, sequential execution via LangGraph |
+| Agentic AI / multi-agent system design | ✅ Demonstrated | 4 named agents with distinct domain responsibilities, sequential execution via LangGraph |
 | LangGraph workflow orchestration | ✅ Demonstrated | `StateGraph`, `TypedDict` state, `set_entry_point`, `add_edge`, `compile()`, `graph.invoke()` all correctly used |
-| MCP (Model Context Protocol) tool-use | ✅ Demonstrated | 12 tools defined as Anthropic tool schemas; Claude invokes them via `tool_use` blocks; full tool-use loop correctly implemented |
+| MCP (Model Context Protocol) tool-use | ✅ Demonstrated | 12 tools defined as Anthropic tool schemas; Claude invokes them via `tool_use` blocks; full loop correctly implemented |
 | Claude / Anthropic SDK | ✅ Demonstrated | `client.messages.create()` with `tools=`, `tool_use` block parsing, `tool_result` construction, `stop_reason` handling |
-| FastAPI microservices | ✅ Demonstrated | 4 REST endpoints, Pydantic schemas with validation, CORS, BackgroundTasks, async processing |
-| Prompt engineering | ✅ Demonstrated | Role-specific prompts per agent, multi-turn conversation history, structured tool-call sequences |
-| Explainability & auditability | ✅ Demonstrated | All 5 decision outputs present; execution_log; decisions.json audit trail; notifications.json |
-| State management across agents | ✅ Demonstrated | `GraphState` TypedDict propagates state across nodes; `ApplicationState.to_dict()` serialises final state |
-| Resilience and error handling | ✅ Demonstrated | Per-node fallback + graph-level fallback chain; system always reaches COMPLETED |
-| UI / UX design | ✅ Demonstrated | Inline polling, shared render function, 5-section form with all required inputs |
-| FastMCP server design | ⚠️ Partial | Server files correctly structured with `@app.call_tool()`; not invoked via MCP client at runtime |
+| FastAPI microservices | ✅ Demonstrated | 4 REST endpoints, 13-field Pydantic schemas, CORS, BackgroundTasks, async processing |
+| Prompt engineering | ✅ Demonstrated | Role-specific prompts per node, multi-turn history threading, actual runtime values in every prompt |
+| Explainability & auditability | ✅ Demonstrated | All 5 outputs; `execution_log`; `decisions.json`; `notifications.json`; all 3 outcomes reachable |
+| State management across agents | ✅ Demonstrated | `GraphState` TypedDict propagates state; `ApplicationState.to_dict()` serialises final state correctly |
+| Resilience and error handling | ✅ Demonstrated | Per-node fallback + graph-level fallback; fallbacks use actual field values, not synthetic defaults |
+| UI / UX design | ✅ Demonstrated | Inline polling, shared render function, 13-field form including credit history inputs |
+| Full-stack integration | ✅ Demonstrated | UI → API → orchestrator → tools → storage pipeline confirmed working end-to-end |
+| FastMCP server design | ⚠️ Partial | Server files correctly structured; not connected as running processes |
 | LangChain integration | ❌ Not demonstrated | Listed in requirements but not imported or used in any source file |
+
+---
+
+### Score Progression
+
+| Evaluation Round | Score | Key Change |
+|---|---|---|
+| Initial (pre-LangGraph) | 7/10 (Good) | LangGraph absent, MCP not wired, Compliance Stage 4 not running |
+| After LangGraph + MCP wiring | 8/10 (Good) | LangGraph live, all 12 tools wired, compliance running; REJECTED could not trigger (hardcoded-zero bug) |
+| Current (all 3 outcomes working) | **9/10 (Excellent)** | REJECTED now fires; credit history flows end-to-end; all 3 outcomes verified; GitHub published |
 
 ---
 
 ### Final Verdict on Solution Quality
 
-Ramanan K.'s submission is a **working, technically sound implementation** of the Agentic AI Intelligent Loan Approval System. The system is operational: LangGraph executes all 4 agent nodes, Claude invokes MCP tools via the Anthropic tool-use API, all 5 required decision outputs are produced and displayed inline, and the compliance audit trail is correctly maintained.
+Ramanan K.'s submission is an **excellent, production-oriented implementation** of the Agentic AI Intelligent Loan Approval System. The system is fully operational: LangGraph executes all 4 agent nodes, Claude invokes all 12 MCP tools via the Anthropic tool-use API, all 5 required decision outputs are produced and displayed inline, all 3 classification outcomes are reachable and have been verified, and the compliance audit trail is correctly maintained.
 
-The submission earns a **GOOD** grade at **8/10**.
+The submission earns an **EXCELLENT** grade at **9/10**.
 
-The core orchestration architecture is correctly implemented and the most important components — LangGraph StateGraph, Anthropic tool-use wiring, per-node resilience, inline UI result display — are all working and demonstrable in a live walkthrough.
+The critical functional gap from the previous evaluation — REJECTED never firing due to `late_payments` and `default_accounts` being hardcoded to `0` throughout the entire pipeline — has been completely resolved. The fix was applied consistently across all 6 affected locations: API schema, data model, API handler, both node prompts that hardcoded the values, and both fallback paths. A live smoke test confirmed the fix: a high-risk profile (credit 520, unemployed, 5 late payments, 1 default) returned decision=REJECTED with risk score 65.5 and all four negative factors correctly listed.
 
-The score does not reach Excellent (9–10) because of three concrete, evidence-based gaps found in the source code:
-
-1. **Architectural inconsistency:** The 4 FastMCP server files define tool logic with different function signatures from the active `TOOL_EXECUTORS`, making them dead code relative to the running system. The MCP server layer is defined but disconnected.
-
-2. **Incomplete tool exposure to Claude:** Three evaluator-required tool capabilities (`check_completeness`, `get_credit_score_risk_level`, `analyze_loan_amount_risk`) are implemented in the MCP server files but never added to the Anthropic tool schemas Claude receives. One compliance output (`generate_decision_summary`) is similarly missing.
-
-3. **Documentation contradicts the implementation:** The README's Future Enhancements section states LangGraph is not yet implemented — directly contradicting the live code. The curl example in the README uses the old 3-field schema that would fail against the current API.
-
-Resolving the MCP server / TOOL_EXECUTORS unification, adding the missing tools to active tool schemas, and updating the README to reflect the actual implementation would elevate this submission to Excellent.
+The remaining point gap (9 vs 10) reflects documentation that still contradicts the code (README Future Enhancements lists LangGraph as not yet implemented), the FastMCP server files being parallel implementations with different interfaces rather than the actual running servers, and LangChain remaining listed but unused.
 
 ---
 
 *Evaluation conducted by: Senior GenAI Solution Reviewer*
-*Evaluation date: 2026-07-03*
+*Evaluation date: 2026-07-06*
 *Evaluated against: GEN AI CASE STUDY LOAN APPROVAL SYSTEM EVALUATOR PROMPT*

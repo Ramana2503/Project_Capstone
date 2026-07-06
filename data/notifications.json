@@ -111,6 +111,110 @@
       "explanation": "Your loan application for APR001 has been placed under REQUIRES_REVIEW status. Risk Score: 54.5/100 with 70% confidence level. Your application presents mixed risk signals requiring manual review by our underwriting team. Key factors under review: (1) Very poor credit score of 400 (critical tier); (2) Extremely high debt-to-income ratio of 103,283%; (3) Current unemployed status with minimal employment history; (4) Significant mismatch between loan request amount and verified income. However, your account shows positive indicators including zero late payments and zero default accounts. Our underwriting team will conduct a comprehensive manual review and contact you within 5-7 business days with a final determination. Please be prepared to provide additional documentation regarding income sources and employment verification.\"",
       "timestamp": "2026-07-04T23:03:21.121737",
       "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704234225",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Application requires manual review due to mixed risk signals. Risk score: 49.5/100. Key factors: Very poor credit score (<600); High debt-to-income ratio.",
+      "timestamp": "2026-07-04T23:42:25.705335",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704234257",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Application requires manual review due to mixed risk signals. Risk score: 49.5/100. Key factors: Very poor credit score (<600); High debt-to-income ratio.",
+      "timestamp": "2026-07-04T23:42:57.610188",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704234358",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Application requires manual review due to mixed risk signals. Risk score: 49.5/100. Key factors: Very poor credit score (<600); High debt-to-income ratio.",
+      "timestamp": "2026-07-04T23:43:58.468372",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704234425",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Application requires manual review due to mixed risk signals. Risk score: 47.5/100. Key factors: Very poor credit score (<600); High debt-to-income ratio.",
+      "timestamp": "2026-07-04T23:44:25.893288",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260704235951",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APR001) has been flagged for mandatory manual review due to mixed risk signals and data verification requirements. Risk Assessment Score: 52.5/100. Key concerns: (1) Credit score of 350 requires review; (2) Debt-to-income ratio requires verification and clarification; (3) Employment stability assessment needed. Next Steps: Our underwriting team will contact you within 3-5 business days to request additional documentation including tax returns, bank statements, and income verification. This review does not constitute a rejection - additional information may resolve identified concerns. Please retain all supporting documents and be prepared to discuss your application details.",
+      "timestamp": "2026-07-04T23:59:51.960125",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR001_20260705000205",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APR001) requires manual review by our lending team. We have identified several factors that need clarification: Your credit score of 350 is below our standard lending criteria, and your debt-to-income ratio indicates a need for further documentation verification. We will contact you within 5-7 business days to request additional information regarding your income verification and loan purpose. Please ensure you have current tax returns, bank statements, and business documentation readily available. We appreciate your patience as we complete our comprehensive review process.",
+      "timestamp": "2026-07-05T00:02:05.555276",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR004_20260705000325",
+      "applicant_id": "APR004",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Application requires manual review due to significant credit risk factors. Risk score: 52.5/100. Key factors: Critically low credit score (350); Extreme DTI ratio (20,359,765%); High employment risk factor (0.2); Inadequate income relative to loan request. Please contact our loan officer for next steps.",
+      "timestamp": "2026-07-05T00:03:25.200627",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APR004_20260705001017",
+      "applicant_id": "APR004",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APR004) is currently under review by our underwriting team. Risk Assessment: 52.5/100. Key concerns identified: Very poor credit score (350), extremely high debt-to-income ratio (20.4M%), and employment stability factors. Our team will contact you within 5-7 business days regarding next steps or any additional documentation required. Please keep your contact information updated.",
+      "timestamp": "2026-07-05T00:10:17.309214",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_TEST001_20260705001319",
+      "applicant_id": "TEST001",
+      "decision": "REJECTED",
+      "explanation": "Application rejected due to significant credit risk factors. Risk score: 65.5/100. Key factors: Very poor credit score of 520 (well below 620 minimum); Debt-to-income ratio of 60.89% exceeds acceptable 43% threshold; 1 default account on credit history; 5 documented late payments indicating payment pattern issues; High employment risk factor due to unemployment status; Insufficient monthly cash flow after obligations.",
+      "timestamp": "2026-07-05T00:13:19.514000",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APP01_20260705040832",
+      "applicant_id": "APP01",
+      "decision": "REJECTED",
+      "explanation": "Your loan application has been reviewed and unfortunately we are unable to approve it at this time. Key factors in this decision include: your credit score of 500 (significantly below our lending threshold of 620), a debt-to-income ratio of 1776.88% indicating that your monthly obligations greatly exceed your monthly income, and confirmed default accounts on your credit record. We recommend seeking financial counseling to address existing liabilities before reapplication. Please contact our office for further discussion.",
+      "timestamp": "2026-07-05T04:08:32.209198",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APP01_20260705041005",
+      "applicant_id": "APP01",
+      "decision": "REJECTED",
+      "explanation": "Your loan application has been reviewed and unfortunately cannot be approved at this time. The decision is based on the following factors: Your credit score of 500 is significantly below our lending threshold of 620. Your existing debt obligations relative to your monthly income (1,776.88% debt-to-income ratio) exceed acceptable lending standards. Your credit report shows default accounts and late payment history, indicating past difficulty in meeting financial obligations. The proposed loan amount is not supportable by your current income and existing financial commitments. We recommend working on rebuilding your credit profile, reducing existing debt, and reapplying once your credit score improves above 620 and your debt-to-income ratio falls below 43%. If you have questions about this decision, please contact our customer service team.",
+      "timestamp": "2026-07-05T04:10:05.947842",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APP01_20260705041128",
+      "applicant_id": "APP01",
+      "decision": "REQUIRES_REVIEW",
+      "explanation": "Your loan application (APP01) requires manual review due to mixed risk signals. Risk Assessment Score: 42.2/100. Key factors affecting this decision: (1) Credit Score 620 - Below prime lending threshold, (2) Debt-to-Income Ratio 1726.88% - Monthly obligations significantly exceed income capacity, (3) Default Account History - One default account on record. Next Steps: Our underwriting team will conduct a detailed manual review of your application. We will contact you within 5-7 business days with updates. Recommendation: Consider reapplying with a reduced loan amount or after improving your credit profile. For questions, please contact our loan department.\"",
+      "timestamp": "2026-07-05T04:11:28.880084",
+      "status": "SENT"
+    },
+    {
+      "notification_id": "NOTIF_APP01_20260705041247",
+      "applicant_id": "APP01",
+      "decision": "APPROVED",
+      "explanation": "Application approved based on strong financial profile and low risk indicators. Risk score: 28.2/100. Key factors: Excellent credit score of 750 demonstrates creditworthiness; Perfect payment history with zero late payments; High DTI ratio of 177.69% is a concern but manageable with structured payments; Employment stability through full-time position; One historical default account is offset by recent positive credit behavior; Low employment risk factor indicates stable income. Please proceed to loan origination or contact our office for next steps.",
+      "timestamp": "2026-07-05T04:12:47.887817",
+      "status": "SENT"
     }
   ]
 }

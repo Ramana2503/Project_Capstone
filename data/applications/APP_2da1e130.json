@@ -1,0 +1,61 @@
+{
+  "application": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 40,
+    "income": 1000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 1.5,
+    "credit_score": 350,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "loan_amount": 10000000.0,
+    "tenure_months": 12,
+    "timestamp": "2026-07-04T23:43:58.313758"
+  },
+  "applicant_profile": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 40,
+    "income": 1000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 1.5,
+    "credit_score": 350,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 10,
+  "credit_history": {},
+  "application_complete": true,
+  "dti_ratio": 1032830.49,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [],
+  "anomaly_risk_score": 0,
+  "employment_risk_factor": 0.6,
+  "decision": "REQUIRES_REVIEW",
+  "final_risk_score": 49.5,
+  "confidence_level": 0.7,
+  "key_decision_factors": [
+    "Very poor credit score (<600)",
+    "High debt-to-income ratio"
+  ],
+  "decision_explanation": "Application requires manual review due to mixed risk signals. Risk score: 49.5/100. Key factors: Very poor credit score (<600); High debt-to-income ratio.",
+  "case_id": "CASE_APR001_20260704234358",
+  "notification_sent": true,
+  "compliance_action": "Case: CASE_APR001_20260704234358, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent \u2013 fallback] API unavailable: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 15.276129550000006, Max budget: 15.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}",
+    "[Risk Agent \u2013 fallback] API unavailable: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 15.276129550000006, Max budget: 15.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}",
+    "[Decision Agent \u2013 fallback] API unavailable: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 15.276129550000006, Max budget: 15.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}",
+    "[Compliance Agent \u2013 fallback] API unavailable: Error code: 400 - {'error': {'message': 'Budget has been exceeded! Current cost: 15.276129550000006, Max budget: 15.0', 'type': 'budget_exceeded', 'param': None, 'code': '400'}}"
+  ]
+}

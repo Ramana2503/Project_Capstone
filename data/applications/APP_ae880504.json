@@ -1,0 +1,77 @@
+{
+  "application": {
+    "applicant_id": "APP01",
+    "name": "Michael Sam",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Full-time",
+    "employment_years": 2.0,
+    "credit_score": 620,
+    "existing_liabilities": 10000.0,
+    "location": "New Jersey",
+    "late_payments": 0,
+    "default_accounts": 1,
+    "loan_amount": 1000000.0,
+    "tenure_months": 12,
+    "timestamp": "2026-07-05T04:10:53.903161"
+  },
+  "applicant_profile": {
+    "applicant_id": "APP01",
+    "name": "Michael Sam",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Full-time",
+    "employment_years": 2.0,
+    "credit_score": 620,
+    "existing_liabilities": 10000.0,
+    "location": "New Jersey",
+    "late_payments": 0,
+    "default_accounts": 1,
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 1
+    }
+  },
+  "income_stability_score": 60,
+  "credit_history": {
+    "late_payments": 0,
+    "default_accounts": 1,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "HIGH",
+    "red_flags": {
+      "late_payments": false,
+      "default_accounts": true
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 1726.88,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [
+    "Default accounts detected"
+  ],
+  "anomaly_risk_score": 30,
+  "employment_risk_factor": 0.05,
+  "decision": "REQUIRES_REVIEW",
+  "final_risk_score": 42.25,
+  "confidence_level": 0.7,
+  "key_decision_factors": [
+    "Poor credit score (600-649)",
+    "High debt-to-income ratio",
+    "Default accounts on record"
+  ],
+  "decision_explanation": "Application requires manual review due to mixed risk signals. Risk score: 42.2/100. Key factors: Credit Score 620 (Poor Range); DTI Ratio 1726.88% (Critically High); Default Account History; Anomaly Risk Score 30 (HIGH); Short Employment Tenure (2 years); Zero Recent Late Payments (Positive).",
+  "case_id": "CASE_APP01_20260705041126",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APP01_20260705041126, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment - Michael Sam (APP01)\n\n### Personal Information\n- **Age:** 30 years old\n- **Location:** New Jersey\n- **Employment:** Full-time position\n\n### Financial Profile\n- **Annual Income:** $60,000\n- **Credit Score:** 620 (Fair/Subprime range)\n- **Existing Liabilities:** $10,000\n\n### Income Stability Score\n- **Score:** 60/100 (Moderate)\n- **Assessment:** Full-time employment with 2.0 years tenure shows moderate stability. While employed full-time, the relatively short employment duration (less than 3 years) presents some risk.\n\n### Credit History Analysis\n- **Late Payments:** 0 \u2713 (Positive)\n- **Default Accounts:** 1 \u2717 (Red Flag)\n- **Risk Assessment:** **HIGH**\n- **Key Concerns:** Presence of at least one defaulted account is a significant risk indicator\n\n### Overall Summary\n\n**Risk Level: MODERATE-HIGH**\n\n**Strengths:**\n- Stable full-time employment\n- No recent late payments\n- Reasonable income level relative to liabilities (Debt-to-Income: ~17%)\n\n**Concerns:**\n- Credit score of 620 is below prime threshold\n- **One default account on record** - major red flag\n- Limited employment tenure (2 years)\n- High credit risk assessment\n\n**Recommendation:** This applicant presents elevated lending risk. Loan approval should be conditional on:\n1. Detailed explanation of the default account\n2. Evidence of recent credit improvement\n3. Potentially require a co-signer or higher interest rate\n4. Further verification of income stability",
+    "[Risk Agent] ## Financial Risk Assessment Summary\n\n### Debt-to-Income Analysis\n| Metric | Value |\n|--------|-------|\n| **DTI Ratio** | 1,726.88% |\n| **Monthly Income** | $5,000.00 |\n| **Monthly Loan Payment** | $86,066.43 |\n| **Total Monthly Liabilities** | $86,344.21 |\n| **Loan Amount Requested** | $1,000,000 |\n\n**Critical Finding:** The debt-to-income ratio is **1,726.88%** - extraordinarily high and completely unsustainable. Monthly obligations (86,066) far exceed monthly income ($5,000) by approximately **17x**.\n\n---\n\n### Anomaly Detection Results\n| Factor | Finding |\n|--------|---------|\n| **Anomalies Detected** | Default accounts on record |\n| **Anomaly Risk Score** | 30/100 (HIGH) |\n| **Severity Level** | HIGH |\n| **Credit Score** | 620 (Fair/Subprime) |\n| **Late Payments** | 0 \u2713 |\n| **Default Accounts** | 1 \u2717 |\n\n**Key Issue:** Previous default account combined with low credit score indicates significant credit risk history.\n\n---\n\n### Employment Risk Factor\n| Metric | Value |\n|--------|-------|\n| **Employment Risk Factor** | 0.05 (5%) |\n| **Employment Type** | Full-time |\n| **Tenure** | 2.0 years |\n| **Risk Level** | LOW-MODERATE |\n\n*Note: While employment is stable, the short tenure (2 years) carries minor risk.*\n\n---\n\n## Overall Risk Assessment\n\n**FINAL RECOMMENDATION: \u26d4 LOAN DENIAL - EXTREME RISK**\n\n### Risk Classification: **CRITICAL/UNACCEPTABLE**\n\n### Key Risk Factors:\n\n1. **Debt Service Impossible** (Critical)\n   - Applicant cannot possibly service this debt\n   - Monthly payment ($86,066) is 17.2x monthly income\n   - Even existing liabilities alone consume ~173% of income\n\n2. **Credit Worthiness Concern** (High)\n   - Credit score 620 (below prime threshold)\n   - History of default accounts\n   - Anomaly risk score: HIGH\n\n3. **Unrealistic Loan Amount** (Critical)\n   - $1,000,000 loan for $60,000 annual income applicant is structurally unsound\n   - No reasonable repayment capacity exists\n\n### Recommendation:\n**REJECT** this loan application immediately. The applicant lacks the financial capacity to service a $1,000,000 loan with only $5,000 monthly income. This represents catastrophic lending risk.\n\n*Suggest applicant apply for a loan amount proportional to their income capacity (typically $50,000-$75,000 maximum for this income level).*",
+    "[Decision Agent] ---\n\n## \ud83c\udfe6 FINAL LOAN DECISION - MICHAEL SAM (APP01)\n\n### **DECISION: \u26a0\ufe0f REQUIRES_REVIEW** (Confidence: 70%)\n\n---\n\n## Risk Score Breakdown\n\n| Component | Score | Weight | Analysis |\n|-----------|-------|--------|----------|\n| **Credit Risk** | 50/100 | High | Poor credit score (620) significantly impacts approval likelihood |\n| **Debt-to-Income** | 70/100 | Critical | Extremely high DTI ratio (1,726.88%) - applicant cannot service debt |\n| **Anomaly Detection** | 30/100 | High | Default account flag is a major red indicator |\n| **Employment Risk** | 2.5/100 | Low | Full-time employment is stable, but tenure is short (2 years) |\n| **Liability Ratio** | 10/100 | Very Low | Existing liabilities are minimal relative to income |\n| **FINAL RISK SCORE** | **42.25/100** | **CRITICAL** | |\n\n---\n\n## Key Decision Factors\n\n### \u274c **Critical Risk Indicators:**\n1. **Debt-to-Income Ratio: 1,726.88%**\n   - Monthly debt obligations far exceed monthly income\n   - Applicant cannot realistically repay the requested loan amount\n   - This alone typically warrants automatic rejection\n\n2. **Default Account History**\n   - One default account on record\n   - Combined with poor credit score (620), indicates payment reliability issues\n   - Anomaly risk score of 30 (HIGH) reflects this concern\n\n3. **Poor Credit Score: 620**\n   - Below prime lending threshold (typically 660+)\n   - Indicates higher historical credit risk\n\n### \u2713 **Mitigating Factors:**\n1. **Zero Recent Late Payments**\n   - No current payment delinquencies\n   - Suggests recent behavioral improvement\n\n2. **Stable Employment**\n   - Full-time employment provides income stability\n   - Low employment risk factor (0.05)\n\n3. **Low Liability Ratio**\n   - Existing liabilities ($10,000) are manageable\n   - Only positive aspect of financial profile\n\n---\n\n## Detailed Recommendation\n\n**Status:** REQUIRES_REVIEW (Manual Underwriting Recommended)\n\n### Suggested Review Actions:\n\n1. **Request Detailed Explanation**\n   - Circumstances surrounding the default account\n   - Evidence of resolution or payment arrangements\n   - Explanation for low credit score\n\n2. **Verify Income & Employment**\n   - Confirm employment stability with employer letter\n   - Verify current income documentation (recent pay stubs, tax returns)\n\n3. **Loan Amount Reassessment**\n   - Current request ($1,000,000) is structurally impossible\n   - Recommend applicant reapply for amount matching actual repayment capacity\n   - Suggested maximum: $50,000-$75,000 based on income\n\n4. **Consider Conditional Approval**\n   - Require co-signer with stronger credit profile\n   - Demand substantial down payment to reduce loan amount\n   - Increase interest rate to reflect risk premium\n   - Request collateral or security\n\n5. **Credit Improvement Timeline**\n   - Encourage applicant to improve credit score before reapplication\n   - Monitor for continued on-time payments over next 6-12 months\n\n---\n\n## Final Verdict\n\n**APPLICANT: Michael Sam | APPLICATION ID: APP01**\n\n| Decision Metric | Status |\n|-----------------|--------|\n| **Loan Decision** | \u26a0\ufe0f REQUIRES_REVIEW |\n| **Risk Level** | \ud83d\udd34 CRITICAL |\n| **Primary Obstacle** | Debt service capacity impossible at requested loan amount |\n| **Recommendation** | **Manual review required; likely REJECT unless loan amount significantly reduced** |\n| **Alternative Path** | Reapply with reduced loan amount ($50K-$75K) and evidence of credit improvement |\n\n---\n\n**This application should be escalated to senior underwriting for manual review due to the critical debt-to-income ratio and default account history. Automatic approval is NOT recommended.**",
+    "[Compliance Agent] ---\n\n## \u2705 COMPLIANCE & ACTION ORCHESTRATION COMPLETE\n\n### Workflow Summary - Michael Sam (APP01)\n\n---\n\n## 1\ufe0f\u20e3 **Case Record Created** \u2713\n\n| Field | Value |\n|-------|-------|\n| **Case ID** | CASE_APP01_20260705041126 |\n| **Applicant ID** | APP01 |\n| **Status** | CREATED |\n| **Creation Timestamp** | 2026-07-05T04:11:26.007700 |\n| **Decision** | REQUIRES_REVIEW |\n| **Risk Score** | 42.2/100 |\n| **Confidence Level** | 70% |\n\n**Key Factors Documented:**\n- Poor credit score (620)\n- High debt-to-income ratio (1726.88%)\n- Default accounts on record\n- Anomaly risk score 30 (HIGH)\n- Short employment tenure (2 years)\n\n---\n\n## 2\ufe0f\u20e3 **Decision Notification Sent** \u2713\n\n| Field | Value |\n|-------|-------|\n| **Notification ID** | NOTIF_APP01_20260705041128 |\n| **Status** | SENT |\n| **Recipient** | APP01 - Michael Sam |\n| **Decision Communicated** | REQUIRES_REVIEW |\n| **Timestamp** | 2026-07-05T04:11:28 |\n\n**Notification Details:**\n- \u2705 Risk assessment score communicated (42.2/100)\n- \u2705 Key risk factors explained to applicant\n- \u2705 Review timeline provided (5-7 business days)\n- \u2705 Next steps outlined\n- \u2705 Recommendations provided (reduced loan amount or credit improvement)\n\n---\n\n## 3\ufe0f\u20e3 **Compliance Action Logged** \u2713\n\n| Field | Value |\n|-------|-------|\n| **Log ID** | LOG_CASE_APP01_20260705041126_041131 |\n| **Status** | LOGGED |\n| **Timestamp** | 2026-07-05T04:11:31.888038 |\n| **Case ID** | CASE_APP01_20260705041126 |\n| **Compliance Status** | ACTIVE REVIEW |\n\n**Audit Trail Entries:**\n- \u2705 Manual underwriting escalation initiated\n- \u2705 Case flagged for senior underwriter review\n- \u2705 Risk assessment documented (42.2/100)\n- \u2705 All three compliance checks confirmed\n- \u2705 Risk factors formally documented\n- \u2705 Applicant communication logged\n- \u2705 Review timeline established\n\n---\n\n## \ud83d\udccb Compliance Checklist - ALL ITEMS COMPLETE\n\n| Requirement | Status | Details |\n|-------------|--------|---------|\n| **Case Record Creation** | \u2705 DONE | Formal case file established |\n| **Decision Documentation** | \u2705 DONE | REQUIRES_REVIEW recorded |\n| **Risk Score Capture** | \u2705 DONE | 42.2/100 documented |\n| **Applicant Notification** | \u2705 DONE | Notification sent and logged |\n| **Decision Explanation** | \u2705 DONE | Comprehensive explanation provided |\n| **Audit Trail** | \u2705 DONE | Full compliance log created |\n| **Key Factors Documented** | \u2705 DONE | 5 risk factors recorded |\n| **Review Escalation** | \u2705 DONE | Flagged for manual underwriting |\n| **Timeline Communication** | \u2705 DONE | 5-7 business day window provided |\n| **Regulatory Compliance** | \u2705 DONE | All required actions logged |\n\n---\n\n## \ud83d\udcca Post-Decision Status Report\n\n**Application: APP01 - Michael Sam**\n\n```\nWORKFLOW STATUS: \u2705 COMPLETE\n\u251c\u2500\u2500 Case Creation: \u2705 CASE_APP01_20260705041126\n\u251c\u2500\u2500 Notification: \u2705 NOTIF_APP01_20260705041128\n\u251c\u2500\u2500 Compliance Logging: \u2705 LOG_CASE_APP01_20260705041"
+  ]
+}

@@ -216,6 +216,26 @@ if page == "Submit Application":
                 help="Total outstanding debt (loans, credit cards, etc.)"
             )
 
+        col1, col2 = st.columns(2)
+        with col1:
+            late_payments = st.number_input(
+                "Late Payments",
+                min_value=0,
+                max_value=50,
+                value=0,
+                step=1,
+                help="Number of late payments on credit record"
+            )
+        with col2:
+            default_accounts = st.number_input(
+                "Default Accounts",
+                min_value=0,
+                max_value=20,
+                value=0,
+                step=1,
+                help="Number of accounts in default"
+            )
+
         st.divider()
 
         # ── Section 4: Loan Details ───────────────────────────────────────
@@ -275,6 +295,8 @@ if page == "Submit Application":
                 "employment_years": float(employment_years),
                 "credit_score": int(credit_score),
                 "existing_liabilities": float(existing_liabilities),
+                "late_payments": int(late_payments),
+                "default_accounts": int(default_accounts),
                 "location": location.strip(),
                 "loan_amount": float(loan_amount),
                 "tenure_months": int(tenure_months),

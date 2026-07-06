@@ -1,0 +1,80 @@
+{
+  "application": {
+    "applicant_id": "TEST001",
+    "name": "Bad Risk",
+    "age": 35,
+    "income": 30000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 0.0,
+    "credit_score": 520,
+    "existing_liabilities": 20000.0,
+    "location": "Test City",
+    "late_payments": 5,
+    "default_accounts": 1,
+    "loan_amount": 50000.0,
+    "tenure_months": 60,
+    "timestamp": "2026-07-05T00:12:44.549096"
+  },
+  "applicant_profile": {
+    "applicant_id": "TEST001",
+    "name": "Bad Risk",
+    "age": 35,
+    "income": 30000.0,
+    "employment_type": "Unemployed",
+    "employment_years": 0.0,
+    "credit_score": 520,
+    "existing_liabilities": 20000.0,
+    "location": "Test City",
+    "late_payments": 5,
+    "default_accounts": 1,
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 5,
+      "default_accounts": 1
+    }
+  },
+  "income_stability_score": 0,
+  "credit_history": {
+    "late_payments": 5,
+    "default_accounts": 1,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "HIGH",
+    "red_flags": {
+      "late_payments": true,
+      "default_accounts": true
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 60.89,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [
+    "Multiple late payments",
+    "Default accounts detected",
+    "Critically low credit score"
+  ],
+  "anomaly_risk_score": 75,
+  "employment_risk_factor": 0.8,
+  "decision": "REJECTED",
+  "final_risk_score": 65.5,
+  "confidence_level": 0.95,
+  "key_decision_factors": [
+    "Very poor credit score (<600)",
+    "High debt-to-income ratio",
+    "Default accounts on record",
+    "Multiple late payments"
+  ],
+  "decision_explanation": "Application rejected due to significant credit risk factors. Risk score: 65.5/100. Key factors: Very poor credit score of 520 (well below 620 minimum); Debt-to-income ratio of 60.89% exceeds acceptable 43% threshold; 1 active default account on credit history; 5 documented late payments indicating payment pattern issues; High anomaly risk score of 75 (critical severity); Employment risk factor of 0.8 due to unemployment status; Insufficient monthly cash flow after obligations.",
+  "case_id": "CASE_TEST001_20260705001319",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_TEST001_20260705001319, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## **APPLICANT PROFILE ASSESSMENT - TEST001**\n\n### **Applicant Information**\n- **Name:** Bad Risk\n- **Age:** 35\n- **Location:** Test City\n- **Annual Income:** $30,000\n- **Existing Liabilities:** $20,000\n\n---\n\n### **Risk Analysis Summary**\n\n**\ud83d\udd34 OVERALL RECOMMENDATION: HIGH RISK - LOAN DENIAL RECOMMENDED**\n\n#### **1. Employment Stability: CRITICAL**\n- **Status:** Unemployed\n- **Income Stability Score:** 0/10\n- **Risk Factor:** No employment history; income source is uncertain and unreliable\n- **Impact:** Cannot verify sustainable income for loan repayment\n\n#### **2. Credit History: HIGH RISK**\n- **Credit Score:** 520 (Poor - typically requires 620+)\n- **Red Flags Identified:**\n  - \u2717 5 Late Payments\n  - \u2717 1 Defaulted Account\n  - \u2717 0% Accounts in Good Standing\n- **Risk Assessment:** HIGH\n- **Impact:** Demonstrates consistent pattern of non-payment and financial irresponsibility\n\n#### **3. Financial Health: CONCERNING**\n- **Debt-to-Income Ratio:** 66.7% ($20,000 liabilities / $30,000 income)\n- **Concern:** Existing liabilities consume majority of stated income\n- **Impact:** Limited capacity to absorb additional loan obligations\n\n---\n\n### **Key Risk Indicators:**\n1. No stable employment = unreliable income stream\n2. Poor credit history with multiple defaults = high probability of default\n3. High existing debt burden = limited repayment capacity\n4. Credit score well below acceptable thresholds\n\n**\u26d4 CONCLUSION:** This applicant presents multiple compounding risk factors that make loan approval inadvisable. Recommend denial.",
+    "[Risk Agent] ## **FINANCIAL RISK ANALYSIS REPORT**\n\n### **Loan Application Details**\n- **Monthly Income:** $2,500.00\n- **Loan Amount:** $50,000\n- **Tenure:** 60 months\n- **Existing Liabilities:** $20,000\n- **Employment Status:** Unemployed (0 years)\n- **Credit Score:** 520\n\n---\n\n### **RISK ASSESSMENT SUMMARY**\n\n**\ud83d\udd34 OVERALL RISK LEVEL: CRITICAL - LOAN DENIAL RECOMMENDED**\n\n---\n\n### **1. DEBT-TO-INCOME ANALYSIS**\n\n| Metric | Value | Status |\n|--------|-------|--------|\n| **DTI Ratio** | 60.89% | \ud83d\udd34 CRITICAL |\n| **Monthly Loan Payment** | $966.64 | \u26a0\ufe0f HIGH |\n| **Total Monthly Liabilities** | $1,522.20 | \u26a0\ufe0f HIGH |\n| **Monthly Income** | $2,500.00 | - |\n| **Remaining Monthly Cash Flow** | $977.80 | \ud83d\udd34 INSUFFICIENT |\n\n**Finding:** With a DTI ratio of 60.89%, the applicant exceeds the standard acceptable threshold of 43%. Monthly obligations consume over 61% of gross income, leaving minimal buffer for living expenses or emergencies.\n\n---\n\n### **2. ANOMALY DETECTION**\n\n| Finding | Details |\n|---------|---------|\n| **Anomaly Risk Score** | 75/100 | \ud83d\udd34 CRITICAL |\n| **Severity Level** | CRITICAL | \ud83d\udd34 |\n| **Detected Anomalies** | \u2022 Multiple late payments (5 instances)<br>\u2022 Default accounts (1 account)<br>\u2022 Critically low credit score (520) |\n\n**Key Concerns:**\n- Late payment history indicates consistent inability or unwillingness to meet obligations\n- Active default accounts demonstrate previous loan default\n- Credit score of 520 is significantly below the minimum acceptable range (typically 620+)\n\n---\n\n### **3. EMPLOYMENT RISK ASSESSMENT**\n\n| Metric | Value | Risk Factor |\n|--------|-------|-------------|\n| **Employment Status** | Unemployed | \ud83d\udd34 CRITICAL |\n| **Years Employed** | 0.0 years | \ud83d\udd34 CRITICAL |\n| **Employment Risk Factor** | 0.8/1.0 | \ud83d\udd34 EXTREMELY HIGH |\n\n**Critical Issues:**\n- **No current employment** = no verifiable income source\n- **Zero employment history** = complete income instability\n- **High risk factor (0.8)** indicates maximum employment-related risk\n- **Sustainability Concern:** $2,500 monthly income cannot be verified or guaranteed\n\n---\n\n### **4. COMPREHENSIVE RISK SCORECARD**\n\n| Risk Category | Score | Assessment |\n|---------------|-------|------------|\n| **Debt-to-Income Risk** | 60.89% | \ud83d\udd34 CRITICAL |\n| **Credit Quality Risk** | 75/100 | \ud83d\udd34 CRITICAL |\n| **Employment Risk** | 0.8/1.0 | \ud83d\udd34 CRITICAL |\n| **Payment History Risk** | Multiple defaults | \ud83d\udd34 CRITICAL |\n| **Liquidity Risk** | $977.80/month | \ud83d\udd34 INADEQUATE |\n\n---\n\n### **5. RED FLAGS SUMMARY**\n\n1. \u2717 **Unemployment with no employment history** - Unverifiable income\n2. \u2717 **DTI exceeds 60%** - Exceeds acceptable lending standards\n3. \u2717 **5 late payments** - Pattern of non-compliance\n4. \u2717 **1 active default** - Previous loan failure\n5. \u2717 **Credit score 520** - Poor creditworthiness\n6. \u2717 **Inadequate cash flow buffer** - Only ~$978/month after all obligations\n7. \u2717 **High loan-to-assets ratio** - $50,000 loan on unstable income\n\n---\n\n### **FINAL RECOMMENDATION**\n\n**\u26d4 DENY LOAN APPLICATION**\n\n**Rationale:**\nThis application exhibits critical risk across ALL major lending criteria. The combination",
+    "[Decision Agent] ---\n\n## **FINAL LOAN DECISION**\n\n### **DECISION: \u26d4 REJECTED**\n\n**Confidence Level:** 95%  \n**Final Risk Score:** 65.5/100 (CRITICAL RISK)\n\n---\n\n### **APPLICANT SUMMARY**\n- **Name:** Bad Risk\n- **Credit Score:** 520\n- **DTI Ratio:** 60.89%\n- **Employment Status:** Unemployed\n- **Default History:** Yes (1 account)\n- **Late Payments:** 5\n\n---\n\n### **DECISION RATIONALE**\n\nThe loan application for **Bad Risk** has been **REJECTED** based on critical risk factors across multiple lending criteria:\n\n#### **Primary Decision Factors:**\n\n1. **\ud83d\udd34 Very Poor Credit Score (520)**\n   - Falls significantly below the minimum acceptable threshold of 620\n   - Indicates poor creditworthiness and historical payment difficulties\n   - Component Risk: 80/100\n\n2. **\ud83d\udd34 High Debt-to-Income Ratio (60.89%)**\n   - Exceeds the industry standard maximum of 43%\n   - Monthly obligations consume 61% of gross income\n   - Only $977.80 remaining monthly for living expenses\n   - Component Risk: 70/100\n\n3. **\ud83d\udd34 Default Accounts on Record**\n   - 1 active/recent default account documented\n   - Clear evidence of previous loan failure\n   - High probability of future default\n   - Critical red flag for loan performance\n\n4. **\ud83d\udd34 Multiple Late Payments (5 instances)**\n   - Demonstrates pattern of non-compliance with payment obligations\n   - Consistent inability or unwillingness to meet financial commitments\n   - Predictive indicator of future payment default\n\n5. **\ud83d\udd34 High Anomaly Risk Score (75/100 - CRITICAL)**\n   - Convergence of multiple risk indicators\n   - Credit score abnormally low\n   - Payment history critically poor\n   - Clear pattern of financial distress\n\n6. **\ud83d\udd34 Employment Risk Factor (0.8 - MAXIMUM)**\n   - Currently unemployed with zero employment history\n   - No verifiable income source\n   - Income sustainability cannot be guaranteed\n   - Zero likelihood of stable income continuation\n\n---\n\n### **RISK SCORE BREAKDOWN**\n\n| Component | Score | Weight | Impact |\n|-----------|-------|--------|--------|\n| **Credit Risk** | 80 | High | \ud83d\udd34 Critical |\n| **DTI Risk** | 70 | High | \ud83d\udd34 Critical |\n| **Anomaly Risk** | 75 | High | \ud83d\udd34 Critical |\n| **Employment Risk** | 40 | Medium | \ud83d\udd34 High |\n| **Liability Risk** | 10 | Low | \u26a0\ufe0f Moderate |\n| **WEIGHTED FINAL SCORE** | **65.5** | - | \ud83d\udd34 **REJECT** |\n\n---\n\n### **DETAILED EXPLANATION FOR APPLICANT**\n\n*\"Your loan application has been rejected due to significant credit risk factors. Your risk score of 65.5/100 indicates critical lending risk. Specifically:*\n\n- *Your credit score of 520 is well below our minimum acceptable threshold of 620*\n- *Your debt-to-income ratio of 60.89% exceeds our acceptable limit of 43%*\n- *Your credit history shows 1 default account, which indicates previous loan failure*\n- *You have 5 documented late payments, showing a pattern of payment difficulties*\n- *Your current unemployment status creates income instability concerns*\n- *Your remaining monthly cash flow after obligations is insufficient to reliably service additional debt*\n\n*The combination of these factors creates unacceptable lending risk. We recommend you:*\n1. *Secure stable employment*\n2. *Reduce existing debt obligations*\n3. *Work to improve your credit score to above 620*\n4. *Address past payment defaults and late payments*\n5. *Reapply in 12-24 months if circumstances improve\"*\n\n---\n\n### **FINAL VERDICT**\n\n**\u26d4 APPLICATION DENIED**\n\n**Recommendation:** Do not proceed with loan origination. This applicant does not meet minimum lending standards and presents critical default risk. All major lending criteria indicate high probability of loan default.\n\n**Next Steps:** Applicant",
+    "[Compliance Agent] ---\n\n## **\u2705 COMPLIANCE & ACTION ORCHESTRATOR - WORKFLOW COMPLETION REPORT**\n\n### **APPLICATION SUMMARY**\n- **Applicant ID:** TEST001\n- **Applicant Name:** Bad Risk\n- **Final Decision:** \u26d4 REJECTED\n- **Risk Score:** 65.5/100 (CRITICAL)\n- **Confidence Level:** 95%\n- **Processing Date:** 2026-07-05\n\n---\n\n### **COMPLIANCE WORKFLOW STATUS: \u2705 ALL ACTIONS COMPLETED**\n\n#### **1. CASE RECORD CREATION \u2705**\n\n| Detail | Value |\n|--------|-------|\n| **Status** | \u2705 CREATED |\n| **Case ID** | CASE_TEST001_20260705001319 |\n| **Creation Timestamp** | 2026-07-05T00:13:19.512390 |\n| **Record Type** | Formal Case Record with Audit Log |\n\n**Details Recorded:**\n- Applicant ID: TEST001\n- Final Decision: REJECTED\n- Risk Score: 65.5/100\n- Confidence Level: 95%\n- Key Decision Factors:\n  - Very poor credit score (<600)\n  - High debt-to-income ratio\n  - Default accounts on record\n  - Multiple late payments\n\n**Audit Trail:** Complete case documentation created and permanently logged in compliance system.\n\n---\n\n#### **2. DECISION NOTIFICATION SENT \u2705**\n\n| Detail | Value |\n|--------|-------|\n| **Status** | \u2705 SENT |\n| **Notification ID** | NOTIF_TEST001_20260705001319 |\n| **Delivery Timestamp** | 2026-07-05T00:13:19 |\n| **Recipient** | TEST001 (Bad Risk) |\n\n**Notification Content Delivered:**\n- **Decision:** Application Rejected\n- **Risk Score:** 65.5/100\n- **Explanation:** \n  - Credit score of 520 (well below 620 minimum threshold)\n  - Debt-to-income ratio of 60.89% (exceeds 43% acceptable limit)\n  - 1 active default account on credit history\n  - 5 documented late payments\n  - Employment instability due to unemployment\n  - Insufficient monthly cash flow reserves\n\n**Delivery Confirmation:** Applicant notification successfully transmitted.\n\n---\n\n#### **3. COMPLIANCE ACTION LOGGED \u2705**\n\n| Detail | Value |\n|--------|-------|\n| **Status** | \u2705 LOGGED |\n| **Log ID** | LOG_TEST001_001319 |\n| **Timestamp** | 2026-07-05T00:13:19.514927 |\n| **Action Type** | Compliance Documentation |\n\n**Action Logged:**\n\"Loan application decision recorded and documented in compliance system. Case record created with final risk assessment and decision rationale.\"\n\n**Audit Trail:** Complete compliance action documented with timestamp and audit trail reference.\n\n---\n\n### **COMPLETE WORKFLOW SUMMARY**\n\n```\nSTART WORKFLOW\n    \u2193\n[1] CREATE CASE RECORD \u2705\n    - Case ID Generated: CASE_TEST001_20260705001319\n    - Full decision documentation recorded\n    - Audit trail established\n    \u2193\n[2] SEND DECISION NOTIFICATION \u2705\n    - Notification ID: NOTIF_TEST001_20260705001319\n    - Applicant informed of rejection decision\n    - Detailed explanation provided\n    \u2193\n[3] LOG COMPLIANCE ACTION \u2705\n    - Log ID: LOG_TEST001_001319\n    - Compliance record documented\n    - Regulatory audit trail complete\n    \u2193\nWORKFLOW COMPLETE \u2705\n```\n\n---\n\n### **REGULATORY COMPLIANCE CHECKLIST**\n\n| Requirement | Status | Details |\n|------------|--------|---------|\n| **Formal Decision Documentation** | \u2705 COMPLETE | Case record created with audit trail |\n| **Applicant Notification** | \u2705 COMPLETE | Decision notification sent to TEST001 |\n| **Decision Justification Recorded** | \u2705 COMPLETE | Key factors and risk score documented |\n| **Compliance Audit Trail** | \u2705 COMPLETE | All"
+  ]
+}

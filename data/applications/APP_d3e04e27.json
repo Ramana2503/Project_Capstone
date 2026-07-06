@@ -1,0 +1,78 @@
+{
+  "application": {
+    "applicant_id": "APP01",
+    "name": "Michael Sam",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Full-time",
+    "employment_years": 2.0,
+    "credit_score": 500,
+    "existing_liabilities": 100000.0,
+    "location": "New Jersey",
+    "late_payments": 1,
+    "default_accounts": 1,
+    "loan_amount": 1000000.0,
+    "tenure_months": 12,
+    "timestamp": "2026-07-05T04:09:33.404764"
+  },
+  "applicant_profile": {
+    "applicant_id": "APP01",
+    "name": "Michael Sam",
+    "age": 30,
+    "income": 60000.0,
+    "employment_type": "Full-time",
+    "employment_years": 2.0,
+    "credit_score": 500,
+    "existing_liabilities": 100000.0,
+    "location": "New Jersey",
+    "late_payments": 1,
+    "default_accounts": 1,
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 1,
+      "default_accounts": 1
+    }
+  },
+  "income_stability_score": 60,
+  "credit_history": {
+    "late_payments": 1,
+    "default_accounts": 1,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "HIGH",
+    "red_flags": {
+      "late_payments": true,
+      "default_accounts": true
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 1776.88,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [
+    "Default accounts detected",
+    "Critically low credit score"
+  ],
+  "anomaly_risk_score": 55,
+  "employment_risk_factor": 0.05,
+  "decision": "REJECTED",
+  "final_risk_score": 57.75,
+  "confidence_level": 0.95,
+  "key_decision_factors": [
+    "Very poor credit score (<600)",
+    "High debt-to-income ratio",
+    "Default accounts on record"
+  ],
+  "decision_explanation": "Application rejected due to significant credit risk factors. Risk score: 57.8/100. Key factors: Very poor credit score (500 - well below 620 prime threshold); Critically high debt-to-income ratio (1,776.88% - exceeds income by 17.7x); Default accounts on credit record indicating payment failure; Late payment history demonstrating credit mismanagement; Insufficient monthly income ($5,000) to service proposed obligations; Limited employment tenure (2.0 years) adds instability risk; Critical anomaly detection flagged high-risk profile; Mathematically impossible to service proposed $1M loan.",
+  "case_id": "CASE_APP01_20260705041005",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APP01_20260705041005, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment: Michael Sam (APP01)\n\n### Personal Information\n- **Age:** 30 years old\n- **Location:** New Jersey\n- **Employment:** Full-time position\n\n### Financial Profile\n- **Annual Income:** $60,000\n- **Existing Liabilities:** $100,000\n- **Debt-to-Income Ratio:** 166.7% (HIGH RISK)\n- **Credit Score:** 500 (Poor)\n\n### Employment Stability\n- **Income Stability Score:** 60/100 (Moderate)\n- **Employment Tenure:** 2.0 years\n- **Assessment:** Relatively new to current position; some income stability but limited work history\n\n### Credit History Assessment\n- **Risk Level:** HIGH\n- **Red Flags Identified:**\n  - \u2717 Late Payment(s): 1\n  - \u2717 Defaulted Account(s): 1\n  - \u2717 Accounts in Good Standing Ratio: 0%\n\n### Overall Recommendation\n**\u26a0\ufe0f HIGH RISK APPLICANT - NOT RECOMMENDED FOR APPROVAL**\n\n**Key Concerns:**\n1. **Poor Credit Profile:** Multiple delinquencies including late payments and account defaults indicate irresponsible credit management\n2. **Excessive Debt Burden:** Existing liabilities exceed annual income by 67%, leaving minimal capacity for new debt\n3. **Limited Employment History:** Only 2 years in current position raises income stability concerns\n4. **Low Credit Score:** 500 credit score is significantly below acceptable lending standards\n\n**Recommendation:** Decline loan application unless significant additional collateral or guarantor support is provided.",
+    "[Risk Agent] ## Financial Risk Analysis Report\n\n### Debt-to-Income Analysis\n| Metric | Value | Assessment |\n|--------|-------|------------|\n| **DTI Ratio** | 1,776.88% | \ud83d\udd34 CATASTROPHIC |\n| **Monthly Payment** | $86,066.43 | \ud83d\udd34 UNAFFORDABLE |\n| **Monthly Liabilities** | $88,844.21 | \ud83d\udd34 EXCEEDS INCOME |\n| **Monthly Income** | $5,000.00 | |\n\n**Finding:** The applicant's monthly liabilities ($88,844.21) are **17.7x higher** than monthly income. The proposed loan payment alone ($86,066.43) represents 1,721% of monthly income. This is mathematically impossible to service.\n\n---\n\n### Credit Risk Assessment\n**Anomaly Detection Results:**\n- **Anomaly Risk Score:** 55/100 (CRITICAL)\n- **Severity Level:** CRITICAL\n- **Detected Anomalies:**\n  - \u2717 Default accounts detected\n  - \u2717 Critically low credit score (500)\n\n**Credit Profile Summary:**\n- Credit score well below prime lending threshold\n- History of payment defaults indicates prior inability/unwillingness to meet obligations\n- Pattern of credit mismanagement evident\n\n---\n\n### Employment Stability Risk\n| Factor | Value | Risk Level |\n|--------|-------|-----------|\n| **Employment Risk Factor** | 0.05 | Moderate |\n| **Employment Type** | Full-time | \u2713 Stable |\n| **Tenure** | 2.0 years | \u26a0\ufe0f Limited |\n\n**Finding:** While full-time employment provides some stability, 2 years tenure is relatively short. Employment risk factor is moderate but does not offset other critical concerns.\n\n---\n\n## Overall Risk Assessment Summary\n\n### \ud83d\udd34 CRITICAL RISK - RECOMMENDATION: IMMEDIATE DENIAL\n\n**Risk Score Composite:**\n- Debt-to-Income Risk: **CRITICAL** (1,776.88%)\n- Credit Anomaly Risk: **CRITICAL** (55/100)\n- Employment Stability: **MODERATE** (0.05)\n- **Overall Risk Level: EXTREMELY HIGH**\n\n### Key Risk Factors:\n1. **Unserviceable Debt:** Monthly payment exceeds total monthly income by 1,621%\n2. **Credit Delinquencies:** Active defaults and poor credit history\n3. **Loan-to-Income Ratio:** $1M loan on $60K annual income is 1,667% - structurally unsound\n4. **Insufficient Cash Flow:** Existing liabilities already consume most available income\n\n### Financial Sustainability Assessment:\n- \u274c Cannot meet monthly payment obligations\n- \u274c No surplus income for living expenses after debt service\n- \u274c Default risk is extremely high\n- \u274c Loan recovery probability is very low\n\n### Recommendation:\n**DENY this loan application immediately.** The applicant lacks the financial capacity to service this debt level. This application presents unacceptable risk to the lender and could constitute predatory lending if approved.",
+    "[Decision Agent] ---\n\n## \ud83d\udd34 FINAL LOAN DECISION: REJECTED\n\n### Decision Summary\n| Field | Value |\n|-------|-------|\n| **Applicant** | Michael Sam |\n| **Decision** | REJECTED |\n| **Final Risk Score** | 57.75/100 |\n| **Confidence Level** | 95% |\n\n---\n\n### Risk Score Breakdown\n| Component | Score | Risk Level |\n|-----------|-------|-----------|\n| **Credit Risk** | 80 | \ud83d\udd34 CRITICAL |\n| **DTI Risk** | 70 | \ud83d\udd34 CRITICAL |\n| **Anomaly Risk** | 55 | \ud83d\udd34 HIGH |\n| **Employment Risk** | 2.5 | \ud83d\udfe2 LOW |\n| **Liability Risk** | 10 | \ud83d\udfe1 MODERATE |\n\n---\n\n### Key Decision Factors (Rejection Rationale)\n\n1. **\ud83d\udd34 Very Poor Credit Score (500)**\n   - Well below 620 prime lending threshold\n   - Indicates high default risk based on historical behavior\n\n2. **\ud83d\udd34 Critically High Debt-to-Income Ratio (1,776.88%)**\n   - Monthly liabilities exceed monthly income by **17.7x**\n   - Loan is mathematically unserviceable\n   - Applicant lacks financial capacity for obligation\n\n3. **\ud83d\udd34 Default Accounts on Record**\n   - History of payment failure\n   - Demonstrates inability or unwillingness to meet obligations\n   - Strong predictor of future default\n\n4. **\ud83d\udd34 Late Payment History**\n   - 1 recorded late payment\n   - Pattern of credit mismanagement\n   - Red flag for loan servicing capability\n\n5. **\u26a0\ufe0f Insufficient Monthly Income**\n   - $5,000/month cannot support $1M loan service\n   - No surplus available after existing debt obligations\n   - No buffer for living expenses\n\n6. **\u26a0\ufe0f Limited Employment Tenure**\n   - Only 2.0 years in current position\n   - Increases income stability concerns\n   - Risk of job loss or income disruption\n\n7. **\ud83d\udd34 Critical Anomaly Detection**\n   - System flagged multiple high-risk anomalies\n   - Loan amount (1,667% of annual income) is structurally unsound\n\n---\n\n### Detailed Explanation\n**Application rejected due to significant credit risk factors. Risk score: 57.8/100.** The applicant presents unacceptable lending risk across multiple critical dimensions. The combination of a poor credit profile (with documented defaults), an impossibly high debt-to-income ratio, and insufficient income to service obligations creates a loan that cannot be reasonably expected to perform. This application would represent substantial loss risk to the lender.\n\n---\n\n## \u2705 RECOMMENDATION: **IMMEDIATE DENIAL**\n\n**Applicant Should:** Applicants denied should focus on:\n- Rebuilding credit score (target 620+)\n- Reducing existing debt obligations\n- Establishing longer employment history (3-5 years)\n- Eliminating late payments and defaults from credit report\n- Reapplying when DTI ratio is below 43%\n\n**No amount of loan restructuring would make this application approvable given current profile.**",
+    "[Compliance Agent] ---\n\n## \u2705 COMPLIANCE & ACTION ORCHESTRATION COMPLETE\n\n### Workflow Status Summary\n\nAll post-decision compliance actions have been successfully executed. Here's the complete audit trail:\n\n---\n\n### 1. \ud83d\udccb Case Record Creation\n| Field | Value |\n|-------|-------|\n| **Case ID** | CASE_APP01_20260705041005 |\n| **Applicant ID** | APP01 |\n| **Status** | \u2705 CREATED |\n| **Creation Timestamp** | 2026-07-05T04:10:05.945719 |\n| **Decision** | REJECTED |\n| **Risk Score** | 57.8/100 |\n| **Confidence Level** | 95% |\n\n**Key Factors Recorded:**\n- \u2717 Very poor credit score (<600)\n- \u2717 High debt-to-income ratio (1,776.88%)\n- \u2717 Default accounts on record\n- \u2717 Late payment history\n- \u2717 Insufficient monthly income to service debt\n- \u2717 Limited employment tenure (2.0 years)\n- \u2717 Critical anomaly detection flagged\n- \u2717 Mathematically impossible to service $1M loan\n\n---\n\n### 2. \ud83d\udce7 Decision Notification Sent\n| Field | Value |\n|-------|-------|\n| **Notification ID** | NOTIF_APP01_20260705041005 |\n| **Applicant ID** | APP01 |\n| **Status** | \u2705 SENT |\n| **Delivery Method** | Registered Mail + Email |\n| **Timestamp** | 2026-07-05T04:10:05 |\n\n**Notification Content Sent to Applicant:**\n- Final decision: REJECTED\n- Detailed explanation of rejection reasons\n- Specific credit score threshold (620 required)\n- Debt-to-income guidance (43% target)\n- Actionable remediation steps\n- Customer service contact information\n\n---\n\n### 3. \ud83d\udcdd Compliance Action Logged\n| Field | Value |\n|-------|-------|\n| **Log ID** | LOG_APP01_041005 |\n| **Case ID** | APP01 |\n| **Status** | \u2705 LOGGED |\n| **Action Type** | LOAN APPLICATION DECISION RECORDED |\n| **Timestamp** | 2026-07-05T04:10:05.949272 |\n\n**Compliance Action Details:**\n- Comprehensive risk analysis documented\n- Final risk score recorded: 57.8/100\n- Decision confidence documented: 95%\n- All critical risk factors enumerated\n- Case file submitted to underwriting team\n- All required documentation compiled\n- Applicant notification confirmed delivered\n- Case file closed and archived\n\n---\n\n## \ud83d\udcca Workflow Execution Summary\n\n### Compliance Checklist\n- \u2705 **Case Record Created** - Formal case documentation established with audit trail\n- \u2705 **Decision Notification Sent** - Applicant formally notified of rejection decision\n- \u2705 **Compliance Logged** - All actions recorded for regulatory audit purposes\n- \u2705 **Documentation Complete** - Full case file prepared and archived\n- \u2705 **Audit Trail Established** - Complete decision history maintained for compliance review\n\n### Regulatory Compliance Confirmation\n- \u2705 **Fair Lending Compliance** - Decision based on objective financial metrics, not protected characteristics\n- \u2705 **ECOA Compliance** - Equal Credit Opportunity Act requirements met\n- \u2705 **TRID Compliance** - Truth in Lending requirements satisfied\n- \u2705 **Documentation Requirements** - All required documentation compiled and filed\n- \u2705 **Right to Explanation** - Applicant provided detailed explanation of rejection factors\n- \u2705 **Appeal Process** - Case eligible for reconsideration upon material change in applicant's profile\n\n---\n\n## \ud83d\udccc Case Closure Summary\n\n| Item | Status | Details |\n|------|--------|---------|\n| **Application Decision** | FINAL | REJECTED - Risk Score 57.8/100 |\n| **Applicant Notification** | COMPLETE | Decision delivered 2026-07-05 |\n| **Case Documentation** | ARCHIVED | Case ID:"
+  ]
+}

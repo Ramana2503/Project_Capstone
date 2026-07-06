@@ -207,6 +207,8 @@ ALL_TOOLS = APPLICANT_DB_TOOLS + RISK_RULES_TOOLS + DECISION_TOOLS + COMPLIANCE_
 # ── Local MCP tool executors ──────────────────────────────────────────────────
 
 def _exec_get_applicant_profile(inputs: dict) -> dict:
+    late = inputs.get("late_payments", 0)
+    defaults = inputs.get("default_accounts", 0)
     return {
         "applicant_id": inputs.get("applicant_id"),
         "name": inputs.get("name", ""),
@@ -217,7 +219,9 @@ def _exec_get_applicant_profile(inputs: dict) -> dict:
         "credit_score": inputs.get("credit_score", 0),
         "existing_liabilities": inputs.get("existing_liabilities", 0),
         "location": inputs.get("location", ""),
-        "credit_history": {"accounts": 0, "accounts_in_good_standing": 0, "late_payments": 0, "default_accounts": 0},
+        "late_payments": late,
+        "default_accounts": defaults,
+        "credit_history": {"accounts": 0, "accounts_in_good_standing": 0, "late_payments": late, "default_accounts": defaults},
     }
 
 
@@ -331,7 +335,7 @@ def _exec_synthesize_decision(inputs: dict) -> dict:
     if late > 3: factors.append("Multiple late payments")
 
     if rs < 30: decision, confidence = "APPROVED", 0.90
-    elif rs < 60: decision, confidence = "REQUIRES_REVIEW", 0.70
+    elif rs < 50: decision, confidence = "REQUIRES_REVIEW", 0.70
     else: decision, confidence = "REJECTED", 0.95
 
     return {"decision": decision, "confidence_level": round(confidence, 2), "key_decision_factors": factors, "final_risk_score": rs}
@@ -490,7 +494,7 @@ Analyze the following applicant using the available tools:
 - Credit Score: {app.credit_score}
 - Existing Liabilities: ${app.existing_liabilities:,.0f}
 - Location: {app.location}
-- Credit History: late_payments=0, default_accounts=0
+- Credit History: late_payments={app.late_payments}, default_accounts={app.default_accounts}
 
 Use get_applicant_profile, calculate_income_stability_score, and evaluate_credit_history tools.
 Return a brief profile assessment."""
@@ -504,7 +508,8 @@ Return a brief profile assessment."""
             "employment_type": app.employment_type, "employment_years": app.employment_years,
             "credit_score": app.credit_score, "existing_liabilities": app.existing_liabilities,
             "location": app.location,
-            "credit_history": {"accounts": 0, "accounts_in_good_standing": 0, "late_payments": 0, "default_accounts": 0},
+            "late_payments": app.late_payments, "default_accounts": app.default_accounts,
+            "credit_history": {"accounts": 0, "accounts_in_good_standing": 0, "late_payments": app.late_payments, "default_accounts": app.default_accounts},
         })
         stability = tool_results.get("calculate_income_stability_score", {})
         credit_hist = tool_results.get("evaluate_credit_history", {})
@@ -512,7 +517,7 @@ Return a brief profile assessment."""
         return {**state, "history": history, "tool_results": tool_results, "applicant_profile": profile, "income_stability_score": stability.get("income_stability_score", 50), "credit_history": credit_hist, "execution_log": log, "status": "PROFILING"}
     except Exception as e:
         # Fallback — build profile from submitted data without LLM
-        profile = {"applicant_id": app.applicant_id, "name": app.name, "age": app.age, "income": app.income, "employment_type": app.employment_type, "employment_years": app.employment_years, "credit_score": app.credit_score, "existing_liabilities": app.existing_liabilities, "location": app.location, "credit_history": {"accounts": 0, "accounts_in_good_standing": 0, "late_payments": 0, "default_accounts": 0}}
+        profile = {"applicant_id": app.applicant_id, "name": app.name, "age": app.age, "income": app.income, "employment_type": app.employment_type, "employment_years": app.employment_years, "credit_score": app.credit_score, "existing_liabilities": app.existing_liabilities, "location": app.location, "late_payments": app.late_payments, "default_accounts": app.default_accounts, "credit_history": {"accounts": 0, "accounts_in_good_standing": 0, "late_payments": app.late_payments, "default_accounts": app.default_accounts}}
         stability = _exec_calculate_income_stability_score({"employment_type": app.employment_type, "employment_years": app.employment_years})
         log.append(f"[Profile Agent – fallback] API unavailable: {e}")
         return {**state, "history": history, "applicant_profile": profile, "income_stability_score": stability.get("income_stability_score", 50), "credit_history": {}, "execution_log": log, "status": "PROFILING"}
@@ -534,7 +539,7 @@ Assess financial risk for this loan application using the available tools:
 - Tenure: {app.tenure_months} months
 - Employment Type: {app.employment_type}, Years: {app.employment_years}
 - Credit Score: {app.credit_score}
-- Late Payments: 0, Defaults: 0
+- Late Payments: {app.late_payments}, Defaults: {app.default_accounts}
 
 Use calculate_debt_to_income, detect_anomalies, and get_employment_risk_factor tools.
 Return a risk assessment summary."""
@@ -548,9 +553,10 @@ Return a risk assessment summary."""
         return {**state, "history": history, "tool_results": {**state.get("tool_results", {}), **tool_results}, "dti_ratio": dti_result.get("dti_ratio", 30), "anomalies": anomaly_result.get("anomalies", []), "anomaly_risk_score": anomaly_result.get("anomaly_risk_score", 0), "employment_risk_factor": emp_result.get("employment_risk_factor", 0.1), "execution_log": log, "status": "RISK_ANALYSIS"}
     except Exception as e:
         dti = _exec_calculate_debt_to_income({"monthly_income": monthly_income, "existing_liabilities": app.existing_liabilities, "loan_amount": app.loan_amount, "tenure_months": app.tenure_months})
+        anomaly = _exec_detect_anomalies({"credit_score": app.credit_score, "late_payments": app.late_payments, "defaults": app.default_accounts, "existing_liability": app.existing_liabilities, "loan_amount": app.loan_amount})
         emp = _exec_get_employment_risk_factor({"employment_type": app.employment_type, "employment_years": app.employment_years})
         log.append(f"[Risk Agent – fallback] API unavailable: {e}")
-        return {**state, "history": history, "dti_ratio": dti.get("dti_ratio", 30), "anomalies": [], "anomaly_risk_score": 0, "employment_risk_factor": emp.get("employment_risk_factor", 0.1), "execution_log": log, "status": "RISK_ANALYSIS"}
+        return {**state, "history": history, "dti_ratio": dti.get("dti_ratio", 30), "anomalies": anomaly.get("anomalies", []), "anomaly_risk_score": anomaly.get("anomaly_risk_score", 0), "employment_risk_factor": emp.get("employment_risk_factor", 0.1), "execution_log": log, "status": "RISK_ANALYSIS"}
 
 
 def node_decision_making(state: GraphState) -> GraphState:
@@ -564,6 +570,8 @@ def node_decision_making(state: GraphState) -> GraphState:
     emp_risk = state.get("employment_risk_factor", 0.1) or 0.1
     liability_ratio = app.existing_liabilities / app.loan_amount if app.loan_amount > 0 else 0
 
+    has_defaults = app.default_accounts > 0
+
     prompt = f"""You are the Loan Decision Agent.
 Make a final loan decision using the available tools:
 - Credit Score: {app.credit_score}
@@ -571,8 +579,8 @@ Make a final loan decision using the available tools:
 - Anomaly Risk Score: {anomaly_risk}
 - Employment Risk Factor: {emp_risk}
 - Liability Ratio: {liability_ratio:.2f}
-- Has Defaults: false
-- Late Payments: 0
+- Has Defaults: {str(has_defaults).lower()}
+- Late Payments: {app.late_payments}
 - Applicant Name: {app.name}
 
 Use calculate_final_risk_score first, then synthesize_decision, then generate_explanation.
@@ -598,7 +606,7 @@ Return final verdict with reasoning."""
         }
     except Exception as e:
         risk_result = _exec_calculate_final_risk_score({"credit_score": app.credit_score, "dti_ratio": dti, "anomaly_risk_score": anomaly_risk, "employment_risk_factor": emp_risk, "liability_ratio": liability_ratio})
-        synth = _exec_synthesize_decision({"final_risk_score": risk_result["final_risk_score"], "credit_score": app.credit_score, "has_defaults": False, "late_payments": 0, "dti_ratio": dti, "anomaly_risk_score": anomaly_risk})
+        synth = _exec_synthesize_decision({"final_risk_score": risk_result["final_risk_score"], "credit_score": app.credit_score, "has_defaults": has_defaults, "late_payments": app.late_payments, "dti_ratio": dti, "anomaly_risk_score": anomaly_risk})
         expl = _exec_generate_explanation({"decision": synth["decision"], "key_factors": synth["key_decision_factors"], "risk_score": risk_result["final_risk_score"], "applicant_name": app.name})
         log.append(f"[Decision Agent – fallback] API unavailable: {e}")
         return {**state, "history": history, "final_risk_score": risk_result["final_risk_score"], "decision": synth["decision"], "confidence_level": synth["confidence_level"], "key_decision_factors": synth["key_decision_factors"], "decision_explanation": expl["detailed_explanation"], "execution_log": log, "status": "DECIDING"}

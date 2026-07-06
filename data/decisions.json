@@ -238,6 +238,223 @@
       "creation_timestamp": "2026-07-04T23:03:17.929430",
       "status": "ACTIVE",
       "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704234225",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 49.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-04T23:42:25.700648",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704234257",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 49.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-04T23:42:57.608429",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704234358",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 49.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-04T23:43:58.464499",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704234425",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 47.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio"
+      ],
+      "creation_timestamp": "2026-07-04T23:44:25.891675",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260704235951",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 52.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Critically poor credit score (350 - well below 580 threshold)",
+        "Catastrophic DTI ratio (10,332,437% - exceeds sustainable levels by factors of millions)",
+        "Self-employed with only 1.5 years tenure (high employment instability)",
+        "Extremely elevated employment risk factor (0.2)",
+        "Mathematical impossibility: Monthly income insufficient to cover loan payment",
+        "Positive credit behavior (no defaults, no late payments)",
+        "Minimal liability burden (0% ratio)",
+        "Suspected data entry errors in income or loan amount"
+      ],
+      "creation_timestamp": "2026-07-04T23:59:51.958939",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR001_20260705000205",
+      "applicant_id": "APR001",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 52.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (350)",
+        "Extreme debt-to-income ratio (20,359,932%)",
+        "Critical anomalies detected",
+        "Self-employed with minimal tenure (1.5 years)",
+        "Suspicious loan amount request",
+        "Mixed payment history signals"
+      ],
+      "creation_timestamp": "2026-07-05T00:02:05.553637",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR004_20260705000325",
+      "applicant_id": "APR004",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 52.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio",
+        "Critically low credit score (350)",
+        "Extreme DTI ratio (20,359,765%)",
+        "High employment risk factor (0.2)",
+        "Inadequate income relative to loan request"
+      ],
+      "creation_timestamp": "2026-07-05T00:03:25.197875",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APR004_20260705001017",
+      "applicant_id": "APR004",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 52.5,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Very poor credit score (350)",
+        "Catastrophic debt-to-income ratio (20.4M%)",
+        "High employment risk (self-employed, 1.5 years)",
+        "Data anomalies detected",
+        "Clean payment history (0 late payments, 0 defaults)",
+        "Unsustainable monthly payment obligation"
+      ],
+      "creation_timestamp": "2026-07-05T00:10:17.303055",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_TEST001_20260705001319",
+      "applicant_id": "TEST001",
+      "decision": "REJECTED",
+      "risk_score": 65.5,
+      "confidence_level": 0.95,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio",
+        "Default accounts on record",
+        "Multiple late payments"
+      ],
+      "creation_timestamp": "2026-07-05T00:13:19.512390",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APP01_20260705040832",
+      "applicant_id": "APP01",
+      "decision": "REJECTED",
+      "risk_score": 57.8,
+      "confidence_level": 0.95,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio (1776.88%)",
+        "Default accounts on record",
+        "Late payment history",
+        "Insufficient repayment capacity"
+      ],
+      "creation_timestamp": "2026-07-05T04:08:32.205477",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APP01_20260705041005",
+      "applicant_id": "APP01",
+      "decision": "REJECTED",
+      "risk_score": 57.8,
+      "confidence_level": 0.95,
+      "key_factors": [
+        "Very poor credit score (<600)",
+        "High debt-to-income ratio (1,776.88%)",
+        "Default accounts on record",
+        "Late payment history",
+        "Insufficient monthly income to service debt",
+        "Limited employment tenure (2.0 years)",
+        "Critical anomaly detection flagged",
+        "Mathematically impossible to service $1M loan"
+      ],
+      "creation_timestamp": "2026-07-05T04:10:05.945719",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APP01_20260705041126",
+      "applicant_id": "APP01",
+      "decision": "REQUIRES_REVIEW",
+      "risk_score": 42.2,
+      "confidence_level": 0.7,
+      "key_factors": [
+        "Poor credit score (620)",
+        "High debt-to-income ratio (1726.88%)",
+        "Default accounts on record",
+        "Anomaly risk score 30 (HIGH)",
+        "Short employment tenure (2 years)"
+      ],
+      "creation_timestamp": "2026-07-05T04:11:26.007700",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
+    },
+    {
+      "case_id": "CASE_APP01_20260705041245",
+      "applicant_id": "APP01",
+      "decision": "APPROVED",
+      "risk_score": 28.2,
+      "confidence_level": 0.9,
+      "key_factors": [
+        "Excellent credit score (750+)",
+        "High debt-to-income ratio",
+        "Default accounts on record",
+        "Perfect payment history",
+        "Stable full-time employment"
+      ],
+      "creation_timestamp": "2026-07-05T04:12:45.213902",
+      "status": "ACTIVE",
+      "assigned_to": "AUTO_SYSTEM"
     }
   ]
 }

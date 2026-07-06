@@ -17,6 +17,9 @@ class LoanApplicationRequest(BaseModel):
     # Loan details
     loan_amount: float = Field(..., gt=0, description="Loan amount in dollars")
     tenure_months: int = Field(..., ge=6, le=360, description="Loan tenure in months")
+    # Credit history
+    late_payments: int = Field(0, ge=0, description="Number of late payments on record")
+    default_accounts: int = Field(0, ge=0, description="Number of default accounts on record")
     # Optional timestamp — defaults to now
     application_timestamp: Optional[str] = Field(None, description="ISO 8601 application timestamp")
 

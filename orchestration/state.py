@@ -17,6 +17,8 @@ class LoanApplication:
     credit_score: int = 0
     existing_liabilities: float = 0.0
     location: str = ""
+    late_payments: int = 0
+    default_accounts: int = 0
     timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
 
 @dataclass
@@ -70,6 +72,8 @@ class ApplicationState:
                 "credit_score": self.application.credit_score,
                 "existing_liabilities": self.application.existing_liabilities,
                 "location": self.application.location,
+                "late_payments": self.application.late_payments,
+                "default_accounts": self.application.default_accounts,
                 "loan_amount": self.application.loan_amount,
                 "tenure_months": self.application.tenure_months,
                 "timestamp": self.application.timestamp

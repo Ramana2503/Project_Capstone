@@ -1,0 +1,72 @@
+{
+  "application": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 40,
+    "income": 100.0,
+    "employment_type": "Self-employed",
+    "employment_years": 1.5,
+    "credit_score": 350,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "loan_amount": 10000000.0,
+    "tenure_months": 6,
+    "timestamp": "2026-07-05T00:01:24.903825"
+  },
+  "applicant_profile": {
+    "applicant_id": "APR001",
+    "name": "Maxwell JR",
+    "age": 40,
+    "income": 100.0,
+    "employment_type": "Self-employed",
+    "employment_years": 1.5,
+    "credit_score": 350,
+    "existing_liabilities": 1000.0,
+    "location": "New Jersey",
+    "credit_history": {
+      "accounts": 0,
+      "accounts_in_good_standing": 0,
+      "late_payments": 0,
+      "default_accounts": 0
+    }
+  },
+  "income_stability_score": 40,
+  "credit_history": {
+    "late_payments": 0,
+    "default_accounts": 0,
+    "accounts_in_good_standing_ratio": 0.0,
+    "risk_assessment": "LOW",
+    "red_flags": {
+      "late_payments": false,
+      "default_accounts": false
+    }
+  },
+  "application_complete": true,
+  "dti_ratio": 20359931.98,
+  "credit_score_risk_level": null,
+  "loan_amount_risk": null,
+  "anomalies_detected": [
+    "Critically low credit score"
+  ],
+  "anomaly_risk_score": 25,
+  "employment_risk_factor": 0.2,
+  "decision": "REQUIRES_REVIEW",
+  "final_risk_score": 52.5,
+  "confidence_level": 0.7,
+  "key_decision_factors": [
+    "Very poor credit score (<600)",
+    "High debt-to-income ratio"
+  ],
+  "decision_explanation": "Application requires manual review due to mixed risk signals. Risk score: 52.5/100. Key factors: Very poor credit score (350); Extreme debt-to-income ratio (20,359,932%); Critical anomalies detected; Self-employed with minimal tenure (1.5 years); Clean payment history (no defaults/late payments); Suspicious loan amount request.",
+  "case_id": "CASE_APR001_20260705000205",
+  "notification_sent": true,
+  "compliance_action": "Case created: CASE_APR001_20260705000205, Notification: SENT",
+  "status": "COMPLETED",
+  "errors": [],
+  "execution_log": [
+    "[Profile Agent] ## Applicant Profile Assessment: Maxwell JR (APR001)\n\n### Overall Risk Level: **HIGH RISK** \u26a0\ufe0f\n\n---\n\n### Key Findings:\n\n**1. Financial Profile:**\n- **Income:** $100 annually (extremely low/unclear income)\n- **Age:** 40 years old\n- **Location:** New Jersey\n- **Existing Liabilities:** $1,000\n\n**2. Employment Analysis:**\n- **Employment Type:** Self-employed\n- **Tenure:** 1.5 years\n- **Income Stability Score:** 40/100 (Poor)\n- **Assessment:** Self-employed with limited tenure indicates unstable income. Less than 2 years in business is considered high-risk.\n\n**3. Credit Analysis:**\n- **Credit Score:** 350 (Poor/Very Poor)\n- **Late Payments:** 0 \u2713\n- **Default Accounts:** 0 \u2713\n- **Active Accounts:** 0\n- **Risk Assessment:** Low (regarding payment history)\n- **Red Flags:** None detected in payment history\n\n---\n\n### Critical Concerns:\n\n1. **Extremely Low Credit Score (350):** Significantly below prime lending standards (typically 620+)\n2. **Minimal/Unclear Income:** $100 annual income is insufficient for loan repayment\n3. **Limited Business Stability:** Only 1.5 years self-employment (typically 2+ years required)\n4. **No Active Credit Accounts:** Zero accounts in good standing suggests limited credit history\n\n### Recommendation:\n\n**DENY LOAN APPLICATION** - This applicant presents substantial lending risk due to:\n- Inadequate income documentation\n- Poor credit profile\n- Insufficient business establishment period\n- Lack of established credit history\n\n*Suggest applicant rebuild credit and establish stable income before reapplying.*",
+    "[Risk Agent] ## Financial Risk Analysis Summary: Loan Application\n\n### Overall Risk Rating: **CRITICAL RISK** \ud83d\udea8\n\n---\n\n### 1. Debt-to-Income Analysis (DTI):\n\n| Metric | Value | Assessment |\n|--------|-------|------------|\n| **DTI Ratio** | 20,359,931.98 | **CATASTROPHIC** \u274c |\n| **Monthly Income** | $8.33 | Critically Insufficient |\n| **Monthly Loan Payment** | $1,695,954.56 | Exceeds Income by 20,359,832% |\n| **Total Monthly Liabilities** | $1,695,982.33 | Unsustainable |\n| **Loan Amount Requested** | $10,000,000 | Unrealistic |\n\n**Interpretation:** The applicant would need to earn ~$1.7M monthly to service this debt. With only $8.33/month income, this loan is mathematically impossible to repay.\n\n---\n\n### 2. Anomaly Detection:\n\n| Finding | Status |\n|---------|--------|\n| **Anomalies Detected** | Critically low credit score |\n| **Anomaly Risk Score** | 25/100 (Medium Severity) |\n| **Credit Score** | 350 (Poor) |\n| **Payment History** | Clean (0 late payments, 0 defaults) |\n| **Liability-to-Loan Ratio** | Extreme mismatch (1:10,000 disproportion) |\n\n**Red Flags:**\n- Enormous disparity between loan amount and existing liabilities\n- Request for 10,000x more debt than currently held\n- Disconnect suggests data error or fraudulent intent\n\n---\n\n### 3. Employment Risk Factor:\n\n| Component | Value | Risk Level |\n|-----------|-------|-----------|\n| **Employment Type** | Self-employed | High Risk |\n| **Years Established** | 1.5 years | High Risk |\n| **Risk Factor Score** | 0.2 (20%) | **HIGH** \u26a0\ufe0f |\n\n**Assessment:** Self-employment with <2 years tenure indicates unstable income. Standard lending requires 2+ years business history for self-employed applicants.\n\n---\n\n### Risk Assessment Summary:\n\n#### Critical Issues Identified:\n\n1. **Debt-to-Income Ratio: IMPOSSIBLE** \n   - DTI exceeds 20M:1 (standard threshold is 43%)\n   - Monthly payment is 203,598x monthly income\n   - Zero repayment capacity\n\n2. **Income Insufficiency: SEVERE**\n   - $8.33/month income is inadequate\n   - Appears to be data entry error or fraudulent application\n   - Cannot support any meaningful debt service\n\n3. **Employment Stability: HIGH RISK**\n   - Self-employed for only 1.5 years\n   - Employment risk factor: 0.2 (unfavorable)\n   - Insufficient business establishment period\n\n4. **Credit Profile: POOR**\n   - Credit score of 350 (sub-prime, typically <580)\n   - While payment history is clean, overall creditworthiness is compromised\n   - Limited ability to manage credit responsibly\n\n5. **Application Anomalies: SUSPICIOUS**\n   - Disproportionate loan request vs. existing obligations\n   - May indicate data errors or application fraud\n\n---\n\n### **FINAL RECOMMENDATION: IMMEDIATELY DENY** \u274c\n\n**Action Items:**\n1. **REJECT APPLICATION** - Applicant lacks financial capacity\n2. **VERIFY INCOME DATA** - $8.33/month appears to be error; request corrected documentation\n3. **FRAUD INVESTIGATION** - Consider investigating for fraudulent intent given the extreme disparities\n4. **DOCUMENT DECISION** - Record decision for audit trail and regulatory compliance\n\n**Loan Approval Probability:** <0.1% (Effectively impossible)\n\n---\n\n*This application presents unacceptable financial risk and should not proceed under any circumstances.*",
+    "[Decision Agent] ---\n\n## FINAL LOAN DECISION: **REQUIRES_REVIEW** \u26a0\ufe0f\n\n**Applicant:** Maxwell JR  \n**Final Risk Score:** 52.5/100 (Elevated Risk)  \n**Decision Confidence:** 70%\n\n---\n\n### Decision Summary:\n\nThe system has flagged this application as **REQUIRES_REVIEW** due to conflicting risk signals. While the clean payment history is positive, the application presents **critical financial red flags** that demand human review before final approval or denial.\n\n---\n\n### Risk Score Breakdown:\n\n| Component | Score | Weight | Severity |\n|-----------|-------|--------|----------|\n| **Credit Risk** | 80/100 | High | Very Poor Credit (350) |\n| **DTI Risk** | 70/100 | Critical | 20,359,932% (Unsustainable) |\n| **Anomaly Risk** | 25/100 | Medium | Suspicious patterns detected |\n| **Employment Risk** | 10/100 | Low | Self-employed, 1.5 years |\n| **Liability Risk** | 10/100 | Low | Minimal existing debt |\n| **Overall Score** | **52.5/100** | **ELEVATED** | **Marginal Approval Threshold** |\n\n---\n\n### Key Decision Factors:\n\n#### \u2705 **Positive Indicators:**\n1. **Clean Payment History** - Zero late payments, zero defaults\n2. **Low Liability Ratio** - Minimal existing debt ($1,000)\n3. **No Credit Defaults** - Demonstrates payment discipline\n\n#### \u274c **Critical Red Flags:**\n1. **Very Poor Credit Score (350)** - Significantly below prime lending (600+)\n2. **Catastrophic DTI Ratio (20,359,932%)** - Income cannot support debt\n3. **Extreme Anomalies Detected** - Loan amount disproportionate to financials\n4. **Employment Instability** - Self-employed <2 years (high risk profile)\n5. **Suspicious Application Pattern** - $10M loan request with $8.33/month income\n\n---\n\n### Detailed Explanation:\n\n**Application requires manual review due to mixed risk signals.**\n\nThis application presents a paradox: the applicant demonstrates responsible payment behavior (no defaults or late payments), yet requests financing that exceeds repayment capacity by over 20 million times. \n\n**Critical Concerns:**\n- The DTI ratio of 20,359,932% is mathematically unsustainable\n- Monthly loan payment ($1.7M) vastly exceeds monthly income ($8.33)\n- Disproportionate loan-to-liability ratio suggests data error or fraudulent intent\n- Very poor credit score indicates limited creditworthiness\n\n---\n\n### **RECOMMENDED NEXT STEPS:**\n\n**For Loan Officer Review:**\n\n1. **VERIFY INCOME DATA** \n   - Confirm $8.33/month income (likely data entry error)\n   - Request tax returns, bank statements, business documentation\n   - Calculate actual monthly income if self-employed\n\n2. **CLARIFY LOAN PURPOSE**\n   - Verify legitimate business reason for $10M request\n   - Assess if amount aligns with stated purpose\n   - Cross-reference application details for inconsistencies\n\n3. **FRAUD INVESTIGATION**\n   - Review application for intentional misrepresentation\n   - Verify applicant identity and contact information\n   - Check for synthetic identity fraud indicators\n\n4. **CREDITWORTHINESS ASSESSMENT**\n   - Investigate credit score decline to 350\n   - Determine if credit rebuild plan exists\n   - Consider credit counseling or alternative programs\n\n5. **EMPLOYMENT VERIFICATION**\n   - Confirm self-employment legitimacy\n   - Review business financials and tax history\n   - Assess business viability and stability\n\n---\n\n### **COMPLIANCE NOTES:**\n\n- Application **cannot be approved in current state**\n- Requires senior loan officer and/or compliance review\n- Must resolve data discrepancies before proceeding\n- Document all review findings for audit trail\n- Consider regulatory reporting requirements if fraud suspected\n\n---\n\n### **FINAL VERDICT:** \n\n**\ud83d\uded1 DO NOT APPROVE WITHOUT RESOLUTION** of critical discrepancies. This application requires immediate manual investigation to determine if it represents a legitimate loan request with data errors or a potential fraudulent application.",
+    "[Compliance Agent] ---\n\n## \u2705 COMPLIANCE & ACTION ORCHESTRATION WORKFLOW - COMPLETED\n\n**Workflow Status:** ALL ACTIONS SUCCESSFULLY EXECUTED  \n**Timestamp:** 2026-07-05T00:02:05 UTC  \n**Case ID:** CASE_APR001_20260705000205\n\n---\n\n### 1. \u2705 CASE RECORD CREATED\n\n| Detail | Value |\n|--------|-------|\n| **Case ID** | CASE_APR001_20260705000205 |\n| **Status** | CREATED |\n| **Applicant ID** | APR001 |\n| **Decision** | REQUIRES_REVIEW |\n| **Risk Score** | 52.5/100 |\n| **Confidence Level** | 70% |\n| **Creation Timestamp** | 2026-07-05T00:02:05.553637 |\n\n**Key Factors Documented:**\n- Very poor credit score (350)\n- Extreme debt-to-income ratio (20,359,932%)\n- Critical anomalies detected\n- Self-employed with minimal tenure (1.5 years)\n- Suspicious loan amount request\n- Mixed payment history signals\n\n**Case Status:** Formally entered into system; flagged for senior loan officer review and potential fraud investigation.\n\n---\n\n### 2. \u2705 DECISION NOTIFICATION SENT\n\n| Detail | Value |\n|--------|-------|\n| **Notification ID** | NOTIF_APR001_20260705000205 |\n| **Status** | SENT |\n| **Recipient** | Applicant APR001 (Maxwell JR) |\n| **Decision Communicated** | REQUIRES_REVIEW |\n\n**Notification Content Summary:**\n- Application status: Under manual review\n- Key issue: Credit score and DTI ratio require clarification\n- Required action: Provide income verification and loan purpose documentation\n- Response deadline: 5-7 business days\n- Contact method: Applicant will be contacted by lending team\n\n**Delivery Status:** \u2705 Successfully transmitted to applicant\n\n---\n\n### 3. \u2705 COMPLIANCE ACTIONS LOGGED\n\n#### Log Entry 1: Case Record Creation\n| Log ID | LOG_APR001_000205 |\n|--------|------------------|\n| **Action** | CASE_RECORD_CREATED |\n| **Status** | LOGGED |\n| **Timestamp** | 2026-07-05T00:02:05.556079 |\n| **Details** | Application formally logged with risk assessment. Case flagged for senior review and fraud investigation due to extreme DTI and income inconsistencies. |\n\n#### Log Entry 2: Applicant Notification\n| Log ID | LOG_APR001_000205 |\n|--------|------------------|\n| **Action** | APPLICANT_NOTIFICATION_SENT |\n| **Status** | LOGGED |\n| **Timestamp** | 2026-07-05T00:02:05.556114 |\n| **Details** | Notification sent regarding REQUIRES_REVIEW status with key factors and documentation request. |\n\n#### Log Entry 3: Verification Requirements\n| Log ID | LOG_APR001_000205 |\n|--------|------------------|\n| **Action** | VERIFICATION_REQUIREMENTS_FLAGGED |\n| **Status** | LOGGED |\n| **Timestamp** | 2026-07-05T00:02:05.556142 |\n\n**Required Documentation:**\n1. \u2713 Income verification (tax returns, bank statements)\n2. \u2713 Loan purpose clarification\n3. \u2713 Credit history investigation\n4. \u2713 Self-employment documentation\n5. \u2713 Fraud indicator assessment\n\n#### Log Entry 4: Compliance Review Escalation\n| Log ID | LOG_APR001_000205 |\n|--------|------------------|\n| **Action** | COMPLIANCE_REVIEW_SCHEDULED |\n| **Status** | LOGGED |\n| **Timestamp** | 2026-07-05T00:02:05.556164 |\n\n**Escalation Details:**\n- **Escalated To:** Senior Loan Officer\n- **Review Timeline:** 5-7 business days\n- **Audit Trail:** Established and documented\n- **Regulatory Status:** Risk assessment documente"
+  ]
+}
